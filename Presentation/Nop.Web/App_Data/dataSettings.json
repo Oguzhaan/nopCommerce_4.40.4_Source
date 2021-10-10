@@ -1,0 +1,6 @@
+﻿{
+  "DataConnectionString": "server=5.2.86.131;database=oguzhan6_nopcommerce;allowuservariables=True;user id=oguzhan6_nopcommerce;password=pK?eLC$h?f*T",
+  "DataProvider": "mysql",
+  "SQLCommandTimeout": null,
+  "RawDataSettings": {}
+}

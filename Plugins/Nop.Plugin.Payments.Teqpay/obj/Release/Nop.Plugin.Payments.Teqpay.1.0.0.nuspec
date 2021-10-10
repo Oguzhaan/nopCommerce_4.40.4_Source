@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Nop.Plugin.Payments.Teqpay</id>
+    <version>1.0.0</version>
+    <authors>oguzhanferli</authors>
+    <description>Package Description</description>
+    <copyright>Copyright ©</copyright>
+    <repository type="Git" url="REPOSITORY_URL" />
+    <dependencies>
+      <group targetFramework="net5.0">
+        <dependency id="Nop.Web.Framework" version="4.4.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\oguzh\Desktop\bionluk\nopCommerce_4.40.4_Source\Presentation\Nop.Web\Plugins\Payments.Teqpay\Nop.Plugin.Payments.Teqpay.dll" target="lib\net5.0\Nop.Plugin.Payments.Teqpay.dll" />
+  </files>
+</package>

@@ -1,0 +1,11 @@
+﻿{
+  "Group": "Payment methods",
+  "FriendlyName": "Teqpay",
+  "SystemName": "Payments.Teqpay",
+  "Version": "1.5",
+  "SupportedVersions": [ "4.40" ],
+  "Author": "OguzhanFerli",
+  "DisplayOrder": 0,
+  "FileName": "Nop.Plugin.Payments.Teqpay.dll",
+  "Description": "Bu plugin Teqpay ödeme sistemini entegre eder"
+}
