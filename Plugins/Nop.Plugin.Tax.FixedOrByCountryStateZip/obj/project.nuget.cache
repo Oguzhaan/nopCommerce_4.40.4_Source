@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8iqvKo3hp0ptWMRIk5ip9mekOnNqCexDPkfbvs5vvw2n8fbuqxXvyjeOCTpm3SsSilfrFBZuQcuqGxP0S342Hw==",
+  "dgSpecHash": "lfen59/oZmc7eCgIBjt5bMDMeuINJR0+D7/+D6CsU7kFl8Z5j4g/Dh+BRTxeGeAH8vsHuskGl8ZW5JADRSr9bw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\oguzh\\Desktop\\bionluk\\nopCommerce_4.40.4_Source\\Plugins\\Nop.Plugin.Tax.FixedOrByCountryStateZip\\Nop.Plugin.Tax.FixedOrByCountryStateZip.csproj",
+  "projectFilePath": "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Plugins\\Nop.Plugin.Tax.FixedOrByCountryStateZip\\Nop.Plugin.Tax.FixedOrByCountryStateZip.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\oguzh\\.nuget\\packages\\advancedstringbuilder\\0.1.0\\advancedstringbuilder.0.1.0.nupkg.sha512",
     "C:\\Users\\oguzh\\.nuget\\packages\\autofac\\6.0.0\\autofac.6.0.0.nupkg.sha512",

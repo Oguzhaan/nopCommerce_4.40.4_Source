@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7VBZutAg+1Pmdt4zKDUf1M9dIWm53vQLz28+Od2awaRBnG0iArM/pZm1yBTorkhiI4LLxZsAzR/sdF0GLjb6Xg==",
+  "dgSpecHash": "dWIPGHvrdHJWYrn1Sf39gEsz4YRXNwBnaYn1VUlouQjCE6OFcO1fnGOq7MdpOX3TB/EhjwKDzH21zG54eJcWGg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\oguzh\\Desktop\\bionluk\\nopCommerce_4.40.4_Source\\Plugins\\Nop.Plugin.Payments.CheckMoneyOrder\\Nop.Plugin.Payments.CheckMoneyOrder.csproj",
+  "projectFilePath": "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Plugins\\Nop.Plugin.Payments.CheckMoneyOrder\\Nop.Plugin.Payments.CheckMoneyOrder.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\oguzh\\.nuget\\packages\\advancedstringbuilder\\0.1.0\\advancedstringbuilder.0.1.0.nupkg.sha512",
     "C:\\Users\\oguzh\\.nuget\\packages\\autofac\\6.0.0\\autofac.6.0.0.nupkg.sha512",

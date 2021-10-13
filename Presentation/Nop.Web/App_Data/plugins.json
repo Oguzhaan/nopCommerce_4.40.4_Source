@@ -82,6 +82,10 @@
     {
       "SystemName": "Payments.Teqpay",
       "Version": "1.5"
+    },
+    {
+      "SystemName": "Widgets.Faqs",
+      "Version": "1.0"
     }
   ],
   "PluginNamesToUninstall": [],
