@@ -1,0 +1,188 @@
+﻿@model ConfigurationModel
+@{Layout = null;}
+
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        toggleFields();
+            @*$("#@html.fieldıdfor(model => model.backuptype)").change(togglefields);
+            togglefields();
+            $('#btnrunbackupnow').click(function () {
+                $.ajax({
+                    cache: false,
+                    contenttype: "application/json",
+                    datatype: "json",
+                    type: "post",
+                    url: "@html.raw(url.action("runbackup", "nopbackup"))",
+                    success: function (data) {
+                        alert(data);
+                    },
+                    error: function (xhr, ajaxoptions, thrownerror) {
+                        alert('failed to run backup.');
+                    }
+                });
+            });*@
+
+           
+        });
+    function toggleFields() {
+        var value = $("[name='BackupType']").find(":selected").val();
+        switch (value) {
+            case '0'://Daily Backup
+                $('#pnlBackupTime').show();
+                $('#pnlBackupDay').hide();
+                $('#pnlBackupMonth').hide();
+                break;
+            case '1'://Weekly Backup
+                $('#pnlBackupTime').show();
+                $('#pnlBackupDay').show();
+                $('#pnlBackupMonth').hide();
+                break;
+            case '2'://Monthly Backup
+                $('#pnlBackupTime').show();
+                $('#pnlBackupDay').hide();
+                $('#pnlBackupMonth').show();
+                break;
+        }
+    }
+</script>
+
+<div class="tab-pane active" id="tab-general">
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.LabelFor(Model => Model.Enabled)
+                    </div>
+                    @if (Model.IsSqlBackupDirectoryPermission == true && Model.IsBackupPermission == true && Model.IsBulkStatementPermission == true)
+                    {
+                        <div class="col-md-9">
+                            @Html.CheckBoxFor(model => model.Enabled)
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="col-md-9">
+                            @Html.CheckBoxFor(model => model.Enabled, new { disabled = "disabled" })
+                        </div>
+                    }
+                </div>
+                <div class="panel-heading">
+                    <div class="adminSeparator">
+                        <br />
+                        <h4>
+                            @T("Nop.Plugin.Widgets.Backup.backupsettings")
+                        </h4>
+                        <hr />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.LabelFor(Model => Model.DatabaseName)
+                    </div>
+                    <div class="col-md-9">
+                        @(Model.DatabaseName)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.LabelFor(Model => Model.BackupType)
+                    </div>
+                    <div class="col-md-9">
+                        <div class="col-md-5 mb-3">
+                            <label>@T("Nop.Plugin.Widgets.Backup.Fields.BackupType")</label>
+                            <select class="custom-select d-block w-100" name="BackupType" required="" onchange="toggleFields();">
+                                <option value="@BackupType.daily.GetHashCode()">@BackupType.daily.ToString()</option>
+                                <option value="@BackupType.weekly.GetHashCode()">@BackupType.weekly.ToString()</option>
+                                <option value="@BackupType.monthly.GetHashCode()">@BackupType.monthly.ToString()</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group" id="pnlBackupTime">
+                    <div class="col-md-3">
+                        @Html.LabelFor(Model => Model.BackupTime)
+                    </div>
+                    <div class="col-md-9">
+                        <input type="time" name="BackupTime" value="@Model.BackupTime" />
+                    </div>
+                </div>
+
+                <div class="form-group" id="pnlBackupDay">
+                    <div class="col-md-3">
+                        @Html.LabelFor(Model => Model.DayOfWeek)
+
+                    </div>
+                    <div class="col-md-9">
+                        <select class="custom-select d-block w-100" name="DayOfWeek" required="">
+                            <option value="" selected></option>
+                            <option value="Monday">@T("Nop.Plugin.Widgets.Backup.Fields.Monday")</option>
+                            <option value="Tuesday">@T("Nop.Plugin.Widgets.Backup.Fields.Tuesday")</option>
+                            <option value="Wednesday">@T("Nop.Plugin.Widgets.Backup.Fields.Wednesday")</option>
+                            <option value="Thursday">@T("Nop.Plugin.Widgets.Backup.Fields.Thursday")</option>
+                            <option value="Friday">@T("Nop.Plugin.Widgets.Backup.Fields.Friday")</option>
+                            <option value="Saturday">@T("Nop.Plugin.Widgets.Backup.Fields.Saturday")</option>
+                            <option value="Sunday">@T("Nop.Plugin.Widgets.Backup.Fields.Sunday")</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group" id="pnlBackupMonth">
+                    <div class="col-md-3">
+                        @Html.LabelFor(Model => Model.DayOfMonth)
+                    </div>
+                    <div class="col-md-9">
+                        <select class="custom-select d-block w-100" name="DayOfMonth" required="">
+                            <option value="" selected></option>
+                            <option value="01">1</option>
+                            <option value="02">2</option>
+                            <option value="03">3</option>
+                            <option value="04">4</option>
+                            <option value="05">5</option>
+                            <option value="06">6</option>
+                            <option value="07">7</option>
+                            <option value="08">8</option>
+                            <option value="09">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="pull-right">
+                    <input type="button" style="float:right;" id="btnRunBackupNow" name="save" class="btn bg-blue" value="@T(" Nop.Plugin.Widgets.Backup.Tabs.RunBackupNow")" />
+
+                </div>
+
+            </div>
+            </div>
+    </div>
+</div>
+
+
+

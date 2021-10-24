@@ -1,0 +1,203 @@
+﻿@model ConfigurationModel
+
+@{
+    Layout = "_ConfigurePlugin";
+}
+
+@await Component.InvokeAsync("StoreScopeConfiguration")
+
+<link href="~/Plugins/Widgets.Backup/Content/CSS/NopBackup.css" rel="stylesheet" />
+
+<style>
+    #googlebase-configure .panel-heading {
+        margin-bottom: 11px;
+    }
+
+    .panel-heading > h4 {
+        display: inline;
+    }
+</style>
+@using (Html.BeginForm())
+{
+    @*@Html.AntiForgeryToken()
+        @Html.HiddenFor(model => model.IsSqlBackupDirectoryPermission)
+        @Html.HiddenFor(model => model.IsBackupPermission)
+        @Html.HiddenFor(model => model.IsBulkStatementPermission)*@
+
+    <div>
+        <div class="stats-wrapper">
+            <div>
+                <ul class="step-wrapper">
+                    @if (Model.IsSqlBackupDirectoryPermission)
+                    {
+                        <li class="sucess">
+                            <span><img src="~/Plugins/Widgets.Backup/Content/images/check-icon.png" /></span>
+                            <strong>@T("Nop.Plugin.Widgets.Backup.Step1")</strong>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="deactive">
+                            <span><img src="~/Plugins/Widgets.Backup/Content/images/cross-icon.png" /></span>
+                            <strong>@T("Nop.Plugin.Widgets.Backup.Step1")</strong>
+                        </li>
+                    }
+                    @if (Model.IsBackupPermission)
+                    {
+                        <li class="sucess">
+                            <span><img src="~/Plugins/Widgets.Backup/Content/images/check-icon.png" /></span>
+                            <strong>@T("Nop.Plugin.Widgets.Backup.Step2")</strong>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="deactive">
+                            <span><img src="~/Plugins/Widgets.Backup/Content/images/cross-icon.png" /></span>
+                            <strong>@T("Nop.Plugin.Widgets.Backup.Step2")</strong>
+                        </li>
+                    }
+                    @if (Model.IsBulkStatementPermission)
+                    {
+                        <li class="sucess">
+                            <span><img src="~/Plugins/Widgets.Backup/Content/images/check-icon.png" /></span>
+                            <strong>@T("Nop.Plugin.Widgets.Backup.Step3")</strong>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="deactive">
+                            <span><img src="~/Plugins/Widgets.Backup/Content/images/cross-icon.png" /></span>
+                            <strong>@T("Nop.Plugin.Widgets.Backup.Step3")</strong>
+                        </li>
+                    }
+                </ul>
+                <div class="refresh-button-wrapper">
+                    <button id="btnReRunAssesment" type="button"><img src="~/Plugins/Widgets.Backup/Content/images/refresh.png" /><span>@T("Nop.Plugin.Widgets.Backup.Fields.RerunAssesment")</span></button>
+                </div>
+                <div class="cloud-wrapper">
+                    @if (Model.IsConnectedGoogleDrive)
+                    {
+                        <ul>
+                            <li>
+                                <div>
+                                    <img src="~/Plugins/Widgets.Backup/Content/images/google-drive.png" />
+                                </div>
+                                <div class="stats-content">
+                                    <span class="stats-message" style="color:forestgreen">@T("Nop.Plugin.Widgets.Backup.DriveLogoConnectedMessage")</span>
+                                </div>
+                            </li>
+                        </ul>
+                    }
+                    else
+                    {
+                        <ul>
+                            <li>
+                                <div>
+
+                                    <img src="~/Plugins/Widgets.Backup/Content/images/google_drive_Black_White.png" />
+                                </div>
+                                <div class="stats-content">
+                                    <span class="stats-message" style="color:red">@T("Nop.Plugin.Widgets.Backup.DriveLogoNotConnectedMessage")</span>
+                                </div>
+                            </li>
+                        </ul>
+                    }
+                </div>
+            </div>
+            @if (Model.IsSqlBackupDirectoryPermission == false && Model.IsBackupPermission == false && Model.IsBulkStatementPermission == false)
+            {
+                <div class="information-message">
+                    <p>@T("Nop.Plugin.Widgets.Backup.Step1InfoMessage")</p>
+                </div>
+            }
+            else if (Model.IsSqlBackupDirectoryPermission == true && Model.IsBackupPermission == false && Model.IsBulkStatementPermission == false)
+            {
+                <div class="information-message">
+                    <p>@T("Nop.Plugin.Widgets.Backup.Step2InfoMessage")</p>
+                </div>
+            }
+            else if (Model.IsSqlBackupDirectoryPermission == true && Model.IsBackupPermission == true && Model.IsBulkStatementPermission == false)
+            {
+                <div class="information-message">
+                    <p>@T("Nop.Plugin.Widgets.Backup.Step3InfoMessage")</p>
+                </div>
+            }
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+    <div>
+        <div class="section-header header-title" style="border-bottom:none;">
+            <div class="section-header">
+                <div class="options">
+                    <input type="submit" name="save" class="btn bg-blue" value="@T("Admin.Common.Save")" id="NopBackupSave" style="float:right;" />
+                </div>
+            </div>
+            <div class="text-danger">
+                @Html.ValidationSummary(false)
+            </div>
+        </div>
+
+        <div id="googlebase-configure">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a href="#tab-general" data-toggle="tab" class="nav-link active">@T("Nop.Plugin.Widgets.Backup.Tabs.General")</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#tab-storagesetting" data-toggle="tab" class="nav-link">@T("Nop.Plugin.Widgets.Backup.Tabs.StorageSetting")</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#tab-backuprepository" data-toggle="tab" class="nav-link">@T("Nop.Plugin.Widgets.Backup.Tabs.BackupRepository")</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                @Html.Partial("~/Plugins/Widgets.Backup/Views/Tabs/General.cshtml", Model)
+                @* <div class="tab-pane active" id="tab-storagesetting">
+        </div>
+        <div class="tab-pane active" id="tab-backuprepository">
+        </div>*@
+              @Html.Partial("~/Plugins/Widgets.Backup/Views/Tabs/Storagesetting.cshtml", Model)
+               @Html.Partial("~/Plugins/Widgets.Backup/Views/Tabs/Backuprepository.cshtml",Model)
+            </div>
+            </div>
+
+        <script>
+
+                $('#btnReRunAssesment').click(function () {
+                    $.ajax({
+                        cache: false,
+                        contentType: "application/json",
+                        dataType: "json",
+                        type: "POST",
+                        url: "@Html.Raw(Url.Action("ReRunassessment", "NopBackup"))",
+                        success: function (data) {
+                            alert(data);
+                            window.location.reload();
+                        },
+                        error: function (xhr, ajaxOptions, thrownError) {
+                            alert('Failed to run assesment test.');
+                        }
+                    });
+                });
+        </script>
+    </div>
+
+}
+<script>
+    $(document).ready(function () {
+        // create TimePicker from input HTML element
+        $("#BackupTime").kendoTimePicker(
+            {
+                animation: {
+                    close: {
+                        effects: "fadeOut zoom:out",
+                        duration: 300
+                    },
+                    open: {
+                        effects: "fadeIn zoom:in",
+                        duration: 300
+                    }
+                }
+            }
+        );
+    });
+</script>

@@ -86,6 +86,10 @@
     {
       "SystemName": "Widgets.Faqs",
       "Version": "1.0"
+    },
+    {
+      "SystemName": "Widgets.Backup",
+      "Version": "1.00"
     }
   ],
   "PluginNamesToUninstall": [],

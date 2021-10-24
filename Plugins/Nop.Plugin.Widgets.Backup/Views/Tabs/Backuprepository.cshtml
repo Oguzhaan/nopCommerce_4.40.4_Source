@@ -1,0 +1,293 @@
+﻿@model ConfigurationModel
+@{Layout = null;}
+<script>
+                    //Delete selected backup from local file from local repository grid
+                    $(document).ready(function () {
+                        $("#deleteSelectedLocalBackupFile").click(function () {
+                            $.ajax({
+                                cache: false,
+                                type: "POST",
+                                data: GetSelectedLocalBackupList(),
+                                url: "@(Url.Action("DeleteLocalSelectedBackup", "NopBackup"))",
+                                complete: function (data) {
+                                    var grid = $("#interface-grid-localBackup");
+                                    grid.data('kendoGrid').dataSource.read();
+                                },
+                                error: function (xhr, ajaxOptions, thrownError) {
+                                    alert('Failed to delete backup file.');
+                                }
+                            });
+                        });
+                        //Get all  selected backup from local grid in array list
+                        function GetSelectedLocalBackupList() {
+                            //ReAssign the array value to set Null
+                            nameList = [];
+                            var grid = $("#interface-grid-localBackup").data("kendoGrid")
+                            var ds = grid.dataSource.view();
+                            for (var i = 0; i < ds.length; i++) {
+                                var row = grid.table.find("tr[data-uid='" + ds[i].uid + "']");
+                                //checkbox
+                                var checkbox = $(row).find(".checkboxGroups");
+                                if (checkbox.is(":checked")) {
+                                    nameList.push(ds[i].BackupName);
+                                }
+                            }
+                            var data = {
+                                'SelectedFilesNames': nameList
+                            }
+                            console.log(nameList);
+                            return data;
+                        }
+                        //Delete selected backup from google drive repository grid
+                        $("#deleteSelectedGoogleDriveFileId").click(function () {
+                            $.ajax({
+                                cache: false,
+                                type: "POST",
+                                data: GetSelectedGoogleDriveFileList(),
+                                url: "@(Url.Action("DeleteSelectedGoogleDriveBackup", "NopBackup"))",
+                                complete: function (data) {
+                                    var grid = $("#interface-grid-googledrive");
+                                    grid.data('kendoGrid').dataSource.read();
+                                },
+                                error: function (xhr, ajaxOptions, thrownError) {
+                                    alert('Failed to delete backup file.');
+                                }
+                            });
+                        });
+                    });
+                    //Get all  selected backup from google drive grid in array list
+                    function GetSelectedGoogleDriveFileList() {
+                        //ReAssign the array value to set Null
+                        nameList = [];
+                        var grid = $("#interface-grid-googledrive").data("kendoGrid")
+                        var ds = grid.dataSource.view();
+                        for (var i = 0; i < ds.length; i++) {
+                            var row = grid.table.find("tr[data-uid='" + ds[i].uid + "']");
+                            //checkbox
+                            var checkbox = $(row).find(".drivecheckboxGroups");
+                            if (checkbox.is(":checked")) {
+                                nameList.push(ds[i].FileId);
+                                console.log(ds[i].FileId);
+                            }
+                        }
+                        var data = {
+                            'selectedGoogleDriveFileIds': nameList
+                        }
+                        console.log(nameList);
+                        return data;
+                    }
+
+                    //Display grid for google backup list
+                    $(document).ready(function () {
+                        $("#interface-grid-localBackup").kendoGrid({
+                            dataSource: {
+                                type: "json",
+                                transport: {
+                                    read: {
+                                        url: "@Html.Raw(Url.Action("LocalBackupList", "Backup"))",
+                                        type: "POST",
+                                        dataType: "json"
+                                    },
+                                },
+                                schema: {
+                                    data: "Data",
+                                    total: "Total",
+                                    errors: "Errors",
+                                    model: {
+                                        id: "Id",
+                                        fields: {
+                                            BackupId: { editable: false, type: "number" },
+                                            BackupName: { editable: false, type: "string" },
+                                            BackupDownloadPath: { editable: false, type: "string" },
+                                            FileSize: { editable: false, type: "number" },
+                                            BackupTime: { editable: false, type: "date" }
+                                        }
+                                    }
+                                },
+                                error: function (e) {
+                                    display_kendoui_grid_error(e);
+                                    // Cancel the changes
+                                    this.cancelChanges();
+                                },
+                                pageSize: 5,
+                                serverPaging: true,
+                                serverFiltering: true,
+                                serverSorting: true
+                            },
+                            pageable: {
+                                refresh: true,
+                                pageSizes: [5, 10]
+                            },
+                            editable: {
+                                confirmation: true,
+                                mode: "inline"
+                            },
+                            scrollable: false,
+                            columns: [{
+                                field: "BackupId", headerTemplate: "<input id='mastercheckbox' type='checkbox'/>",
+                                headerAttributes: { style: "text-align:center" }, attributes: { style: "text-align:center" }, template: "<input type='checkbox' value='#=Id#' class='checkboxGroups'/>"
+                            },
+                            {
+                                field: "BackupId",
+                                title: "Sr.No"
+                            },
+                            {
+                                field: "BackupName",
+                                title: "Backup Name"
+                            },
+                            {
+                                field: "BackupDownloadPath",
+                                title: "Download",
+                                template: '<a href="#=BackupDownloadPath#">Download</a>'
+                            },
+                             {
+                                 field: "FileSize",
+                                 title: "File size",
+                                 template: "#: FileSize # MB"
+                             },
+                            {
+                                field: "BackupTime",
+                                title: "Backup Time",
+                                type: "date",
+                                format: "{0:G}"
+                            }
+                            ]
+
+                        });
+
+                        $('#interface-grid-localBackup #mastercheckbox').click(function () {
+                            if ($('#interface-grid-localBackup #mastercheckbox').prop("checked") == true) {
+                                $('#interface-grid-localBackup .checkboxGroups').prop("checked", true);
+                            }
+                            else if ($('#interface-grid-localBackup #mastercheckbox').prop("checked") == false) {
+                                $('#interface-grid-localBackup .checkboxGroups').prop("checked", false);
+                            }
+                        });
+                    });
+
+                    $(document).ready(function () {
+                        $("#interface-grid-googledrive").kendoGrid({
+                            dataSource: {
+                                type: "json",
+                                transport: {
+                                    read: {
+                                        url: "@Html.Raw(Url.Action("GoogleDriveBackupList", "Backup"))",
+                                        type: "POST",
+                                        dataType: "json"
+                                    },
+                                },
+                                schema: {
+                                    data: "Data",
+                                    total: "Total",
+                                    errors: "Errors",
+                                    model: {
+                                        id: "Id",
+                                        fields: {
+                                            SerialCount: { editable: false, type: "number" },
+                                            FileId: { editable: false, type: "number" },
+                                            FileName: { editable: false, type: "string" },
+                                            DownloadPath: { editable: false, type: "string" },
+                                            FileId: { editable: false, type: "string" },
+                                            FileSize: { editable: false, type: "number" },
+                                            CreatedTime: { editable: false, type: "date" },
+                                        }
+                                    }
+                                },
+                                error: function (e) {
+                                    display_kendoui_grid_error(e);
+                                    // Cancel the changes
+                                    this.cancelChanges();
+                                },
+                                pageSize: 5,
+                                serverPaging: true,
+                                serverFiltering: true,
+                                serverSorting: true
+                            },
+                            pageable: {
+                                refresh: true,
+                                pageSizes: [5, 10]
+                            },
+                            editable: {
+                                confirmation: false,
+                                mode: "inline"
+                            },
+                            scrollable: false,
+                            columns: [{
+                                field: "FileId", headerTemplate: "<input id='drivemastercheckbox' type='checkbox'/>",
+                                headerAttributes: { style: "text-align:center" }, attributes: { style: "text-align:center" }, template: "<input type='checkbox' value='#=Id#' class='drivecheckboxGroups'/>"
+                            },
+                            {
+                                field: "SerialCount",
+                                title: "Sr.No"
+                            },
+                            {
+                                field: "FileName",
+                                title: "Backup Name"
+                            },
+                             {
+                                 field: "FileId",
+                                 hidden: true
+                             },
+                              {
+                                  field: "DownloadPath",
+                                  title: "Download",
+                                  template: '<a href="#=DownloadPath#">Download</a>'
+                              },
+                             {
+                                 field: "FileSize",
+                                 title: "File Size",
+                                 template: "#: FileSize # MB"
+                             },
+                              {
+                                  field: "CreatedTime",
+                                  title: "Backup Time",
+                                  type: "date",
+                                  format: "{0:G}"
+                              }
+                            ]
+                        });
+                        $('#interface-grid-googledrive #drivemastercheckbox').click(function () {
+                            if ($('#interface-grid-googledrive #drivemastercheckbox').prop("checked") == true) {
+                                $('#interface-grid-googledrive .drivecheckboxGroups').prop("checked", true);
+                            }
+                            else if ($('#interface-grid-googledrive #drivemastercheckbox').prop("checked") == false) {
+                                $('#interface-grid-googledrive .drivecheckboxGroups').prop("checked", false);
+                            }
+                        });
+                    });
+</script>
+
+<div class="tab-pane" id="tab-backuprepository">
+    <div class="panel-group">
+        <div class="panel panel-default">
+
+            <div class="panel-body">
+
+                <div class="panel-heading">
+                    <h4>
+                        @T("Nop.Plugin.Widgets.Backup.LocalBackupRepository")
+                    </h4>
+
+                    <div style="float:right">
+                        <input type="button" id="deleteSelectedLocalBackupFile" name="delete" class="btn bg-blue" value="@T("Nop.Plugin.Widgets.Backup.Delete.LocalBackupRepository")" />
+                    </div>
+                </div>
+                <div id="interface-grid-localBackup"></div>
+
+                <br />
+                <hr />
+
+                <div class="panel-heading">
+                    <h4>
+                        @T("Nop.Plugin.Widgets.Backup.gooogledrivebackuprepository")
+                    </h4>
+
+                    <div style="float:right">
+                        <input type="button" id="deleteSelectedGoogleDriveFileId" name="delete" class="btn bg-blue" value="@T("Nop.Plugin.Widgets.Backup.Delete.gooogledrivebackuprepository")" />
+                    </div>
+                </div>
+                <div id="interface-grid-googledrive"></div>
+            </div>
+        </div>
+    </div>
+</div>

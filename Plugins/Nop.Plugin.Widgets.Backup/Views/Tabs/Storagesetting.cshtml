@@ -1,0 +1,66 @@
+﻿@model ConfigurationModel
+@{Layout = null;}
+<div class="tab-pane" id="tab-storagesetting">
+    <div class="panel-group">
+        <div class="panel panel-default">
+
+            <div class="panel-body">
+
+                <div class="panel-heading">
+                    <br />
+                    <h4>
+                        @T("Nop.Plugin.Widgets.Backup.StorageSetting")
+                    </h4>
+                    <hr />
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.LabelFor(Model => Model.UploadToGoogleDrive)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.EditorFor(Model => Model.UploadToGoogleDrive)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.LabelFor(Model => Model.GoogleDriveClientId)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.EditorFor(Model => Model.GoogleDriveClientId)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.LabelFor(Model => Model.GoogleDriveClientSecret)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.EditorFor(Model => Model.GoogleDriveClientSecret)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.LabelFor(Model => Model.GoogleDriveAPIKey)
+                    </div>
+                    <div class="col-md-9">
+                        @Html.EditorFor(Model => Model.GoogleDriveAPIKey)
+
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-3">
+                        @Html.LabelFor(Model => Model.RedirectURL)
+                    </div>
+                    <div class="col-md-9">
+                        <label>@Model.RedirectURL</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

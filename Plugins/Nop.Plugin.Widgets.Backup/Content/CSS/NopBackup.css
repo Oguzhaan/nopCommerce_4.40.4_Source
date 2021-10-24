@@ -1,0 +1,228 @@
+﻿/*** NopBackup Configure ***/
+
+.stats-wrapper {
+    text-align:center;
+    clear:both;
+    background:#ddd;
+    margin-bottom:15px;
+    float:left;
+    width:100%;
+}
+.step-wrapper .stats-message {
+    float: left;
+    width: 100%;
+}
+.stats-wrapper > div {
+    margin-bottom: 5px;
+}
+.stats-wrapper .stats-content {
+    margin: 0 auto;
+    clear: both;
+    border-top: 1px solid #ddd;
+    padding-top: 5px;
+    width: 100%;
+    clear: both;
+    display: inline-block;
+}
+.stats-wrapper button {
+    clear: both;
+    margin-top: 10px;
+}
+.step-wrapper{
+    float: left;
+    margin-left: 0;
+    padding: 5px 0px 5px 10px;
+    width: 50%;
+    margin: 0;
+}
+.step-wrapper li {
+    list-style: none;
+    float: left;
+    width: 25%;
+    position: relative;
+}
+.step-wrapper li span::after {
+    background: #bbb;
+    bottom: 0;
+    content: "";
+    height: 2px;
+    left: 50px;
+    position: absolute;
+    right: 0;
+    top: 25px;
+    z-index: 0;
+}
+.step-wrapper li:last-child span::after {
+    background: none;
+}
+.step-wrapper li span {
+    background: #ccc;
+    list-style: none;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 2px #eee;
+    float: left;
+}
+.step-wrapper li.sucess span {
+    background: #4d9748;
+}
+.step-wrapper li.deactive span {
+    background: #a94442;
+}
+.step-wrapper li span img {
+    padding: 13px;
+}
+.step-wrapper li strong {
+    float: left;
+    width: 80%;
+    clear: both;
+    margin-top: 10px;
+    text-align: left;
+    word-wrap: break-word;
+    color: #333;
+    font-weight: normal;
+    font-size: 11px;
+}
+.stats-wrapper .information-message {
+    clear: both;
+    text-align: left;
+}
+.stats-wrapper .information-message p {
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    border-radius: 5px;
+    color: #31708f;
+    display: inline-block;
+    margin: 10px 10px 0;
+    padding: 5px;
+    text-align: left;
+    font-size: 12px;
+}
+.stats-wrapper .refresh-button-wrapper {
+    float: left;
+    margin-top: 5px;
+}
+.stats-wrapper .refresh-button-wrapper button {
+    background: #333;
+    padding: 10px;
+    color: #fff;
+    margin-right: 15px;
+    float: left;
+    border-radius: 5px;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    margin-top:0px;
+    border:none;
+    box-shadow:none;
+    cursor:pointer;
+    width: 90px;
+    height: 90px;
+}
+.stats-wrapper .refresh-button-wrapper button:hover {
+    background: #e84c3d;
+} 
+.refresh-button-wrapper span {
+    clear: both;
+    float: left;
+    text-align: center;
+    width: 100%;
+}
+.stats-wrapper .cloud-wrapper {
+    float:right;
+    width:40%;
+}
+.cloud-wrapper ul{
+    margin:0;
+    padding:0;
+    float:left;
+    width:100%;
+}
+.cloud-wrapper ul li {
+    box-shadow: 0 0 2px #bbb;
+    float: right;
+    list-style: outside none none;
+    margin-right: 10px;
+    margin-top: 5px;
+    text-align: center;
+    width: 17%;
+    margin-bottom:5px;
+    background:#fff;
+    height:90px;
+}
+.cloud-wrapper img {
+    padding: 4px;
+}
+.stats-wrapper .stats-content .stats-message{
+    padding:0px 5px;
+}
+.section-header.header-title{
+    height:auto;
+    min-height:25px;
+}
+.section-header.header-title .validation-summary-errors > ul {
+    margin: 0;
+}
+
+
+/* Media Query for Responsive Device*/
+@media (min-width:1024px) and (max-width:1199px){
+    .cloud-wrapper ul li{
+        width:20%;
+    }
+    .step-wrapper{
+        width:45%;
+    }
+}
+@media (min-width:768px) and (max-width:1023px){
+    .cloud-wrapper ul li{
+        width:20%;
+    }
+    .step-wrapper{
+        width:43%;
+    }
+    .step-wrapper li{
+        width:33.33%;
+    }
+    .cloud-wrapper ul li{
+        width:28%;
+    }
+}
+@media all and (max-width:767px){
+    .step-wrapper li{
+        display:inline-block;
+        float:none;
+        margin-right:-10px;
+    }
+    .step-wrapper{
+        margin:0 auto;
+        text-align:center;
+        float:none;
+        width:100%;
+        padding-left:0px;
+    }
+    .stats-wrapper .refresh-button-wrapper{
+        float:none;
+        margin:10px auto;
+        display:inline-block;
+    }
+    .stats-wrapper .cloud-wrapper{
+        float:none;
+        width:100%;
+    }
+    .cloud-wrapper ul{
+        width:100%;
+    }
+    .cloud-wrapper ul li{
+        display:inline-block;
+        text-align:center;
+        float:none;
+        width:90px;
+        margin-right:5px;
+    }
+    .stats-wrapper .refresh-button-wrapper button{
+        margin-right:0px;
+    }
+}
