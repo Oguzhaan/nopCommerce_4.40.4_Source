@@ -9,9 +9,9 @@ namespace Nop.Plugin.Widgets.Faqs.Models.Mapping.Builders
         public override void MapEntity(CreateTableExpressionBuilder table)
         {
             //map the primary key (not necessary if it is Id field)
-            table.WithColumn(nameof(FaqsViewTrackerRecord.Id)).AsInt32().PrimaryKey()
-            .WithColumn(nameof(FaqsViewTrackerRecord.Title)).AsString()
-            .WithColumn(nameof(FaqsViewTrackerRecord.Description)).AsString();
+            table.WithColumn(nameof(FaqsViewTrackerRecord.Title)).AsString()
+            .WithColumn(nameof(FaqsViewTrackerRecord.Description)).AsString()
+            .WithColumn(nameof(FaqsViewTrackerRecord.Order)).AsString();
         }
     }
 }

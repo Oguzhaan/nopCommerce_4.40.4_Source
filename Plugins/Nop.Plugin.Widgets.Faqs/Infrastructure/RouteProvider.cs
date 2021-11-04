@@ -19,6 +19,7 @@ namespace Nop.Plugin.Widgets.Faqs.Infrastructure
             endpointRouteBuilder.MapControllerRoute(FaqsDefaults.ConfigurationRouteName, "Plugins/Faqs/Configure", new { controller = "Faqs", action = "Configure", area = AreaNames.Admin });
             endpointRouteBuilder.MapControllerRoute(FaqsDefaults.ConfigurationRouteName, "Plugins/Faqs/List", new { controller = "Faqs", action = "List", area = AreaNames.Admin });
             endpointRouteBuilder.MapControllerRoute(FaqsDefaults.ConfigurationRouteName, "Plugins/Faqs/Add", new { controller = "Faqs", action = "Add", area = AreaNames.Admin });
+            endpointRouteBuilder.MapControllerRoute(FaqsDefaults.ConfigurationRouteName, "faqs", new { controller = "FaqsView", action = "index" });
         }
 
         /// <summary>

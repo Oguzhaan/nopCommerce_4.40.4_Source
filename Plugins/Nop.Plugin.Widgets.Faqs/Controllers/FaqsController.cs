@@ -1,4 +1,6 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Nop.Core;
 using Nop.Core.Domain.Cms;
@@ -80,10 +82,9 @@ namespace Nop.Plugin.Widgets.Faqs.Controllers
 
         public async Task<IActionResult> List()
         {
-            var list = _faqsViewTrackerService.GetAll();
-            return View("~/Plugins/Widgets.Faqs/Views/List.cshtml");
+            var list = _faqsViewTrackerService.GetAll().OrderBy(x => x.Order).ToList();
+            return View("~/Plugins/Widgets.Faqs/Views/List.cshtml", list);
         }
-
 
         [HttpPost]
         /// <returns>A task that represents the asynchronous operation</returns>
@@ -115,7 +116,26 @@ namespace Nop.Plugin.Widgets.Faqs.Controllers
             _faqsViewTrackerService.InsertAsync(record);
             ViewBag.Message = "Basarili";
             ViewBag.IsSuccess = true;
-            return View("~/Plugins/Widgets.Faqs/Views/List.cshtml");
+            return View("~/Plugins/Widgets.Faqs/Views/Add.cshtml");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(FaqsViewTrackerRecord record)
+        {
+            var faqdata = await _faqsViewTrackerService.GetByIdAsync(record.Id);
+            _faqsViewTrackerService.DeleteAsync(faqdata);
+            ViewBag.Message = "Basarili";
+            ViewBag.IsSuccess = true;
+            var list = _faqsViewTrackerService.GetAll().OrderBy(x => x.Order).ToList();
+            return View("~/Plugins/Widgets.Faqs/Views/List.cshtml", list);
+        }
+
+        [HttpPost]
+        [IgnoreAntiforgeryToken]
+        public Task<FaqsViewTrackerRecord> GetFaqData(int id)
+        {
+            var list = _faqsViewTrackerService.GetByIdAsync(id);
+            return list;
         }
         #endregion
     }

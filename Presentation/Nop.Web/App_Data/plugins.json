@@ -80,16 +80,8 @@
       "Version": "1.68"
     },
     {
-      "SystemName": "Payments.Teqpay",
-      "Version": "1.5"
-    },
-    {
       "SystemName": "Widgets.Faqs",
-      "Version": "1.0"
-    },
-    {
-      "SystemName": "Widgets.Backup",
-      "Version": "1.00"
+      "Version": "1.10"
     }
   ],
   "PluginNamesToUninstall": [],

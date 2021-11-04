@@ -13386,19 +13386,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Zafer\\.nuget\\packages\\": {}
+    "C:\\Users\\oguzh\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "4.4.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Presentation\\Nop.Web\\Nop.Web.csproj",
+      "projectUniqueName": "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Presentation\\Nop.Web\\Nop.Web.csproj",
       "projectName": "Nop.Web",
-      "projectPath": "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Presentation\\Nop.Web\\Nop.Web.csproj",
-      "packagesPath": "C:\\Users\\Zafer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Presentation\\Nop.Web\\obj\\",
+      "projectPath": "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Presentation\\Nop.Web\\Nop.Web.csproj",
+      "packagesPath": "C:\\Users\\oguzh\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Presentation\\Nop.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Zafer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\oguzh\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13412,17 +13412,17 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Libraries\\Nop.Core\\Nop.Core.csproj": {
-              "projectPath": "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Libraries\\Nop.Core\\Nop.Core.csproj"
+            "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Libraries\\Nop.Core\\Nop.Core.csproj": {
+              "projectPath": "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Libraries\\Nop.Core\\Nop.Core.csproj"
             },
-            "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Libraries\\Nop.Data\\Nop.Data.csproj": {
-              "projectPath": "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Libraries\\Nop.Data\\Nop.Data.csproj"
+            "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Libraries\\Nop.Data\\Nop.Data.csproj": {
+              "projectPath": "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Libraries\\Nop.Data\\Nop.Data.csproj"
             },
-            "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Libraries\\Nop.Services\\Nop.Services.csproj": {
-              "projectPath": "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Libraries\\Nop.Services\\Nop.Services.csproj"
+            "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Libraries\\Nop.Services\\Nop.Services.csproj": {
+              "projectPath": "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Libraries\\Nop.Services\\Nop.Services.csproj"
             },
-            "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj": {
-              "projectPath": "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj"
+            "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj": {
+              "projectPath": "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj"
             }
           }
         }
@@ -13454,7 +13454,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

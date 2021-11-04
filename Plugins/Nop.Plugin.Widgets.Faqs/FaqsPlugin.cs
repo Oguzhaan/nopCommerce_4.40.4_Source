@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Routing;
+using Microsoft.AspNetCore.Routing;
 using Nop.Core.Domain.Cms;
 using Nop.Services.Cms;
 using Nop.Services.Configuration;
@@ -12,13 +13,14 @@ using Nop.Services.Localization;
 using Nop.Services.Plugins;
 using Nop.Services.Stores;
 using Nop.Web.Framework.Infrastructure;
+using Nop.Web.Framework.Menu;
 
 namespace Nop.Plugin.Widgets.Faqs
 {
     /// <summary>
     /// Represents the plugin implementation
     /// </summary>
-    public class FaqsPlugin : BasePlugin, IWidgetPlugin
+    public class FaqsPlugin : BasePlugin, IWidgetPlugin, IAdminMenuPlugin
     {
         #region Fields
 
@@ -100,8 +102,24 @@ namespace Nop.Plugin.Widgets.Faqs
             await _localizationService.AddLocaleResourceAsync(new Dictionary<string, string>
             {
                 ["Plugins.Widgets.Faqs.WidgetZone"] = "Widget Zone",
+                ["Plugins.Widgets.Faqs.ViewZone"] = "View Zone",
+                ["Plugins.Widgets.Faqs.HeaderAfter"] = "Header After",
                 ["Plugins.Widgets.Faqs.Add"] = "Widget Zone",
+                ["Plugins.Widgets.Faqs.EditWherePlugin"] = "Edit where the plugin appears",
+                ["Plugins.Widgets.Faqs.AddFaqStr"] = "Please click to add new FAQ",
+                ["Plugins.Widgets.Faqs.EditWherePlugin"] = "Please click to add new FAQ",
+                ["Plugins.Widgets.Faqs.EditFaqList"] = "Faq Add & Edit",
+                ["Plugins.Widgets.Faqs.FaqsViewText"] = "Faqs",
+                ["Plugins.Widgets.Faqs.FaqsListDeleteButton"] = "Delete",
+                ["Plugins.Widgets.Faqs.FaqsListHeaderTitle"] = "Faq List",
+                ["Plugins.Widgets.Faqs.FaqsListTitle"] = "Title",
+                ["Plugins.Widgets.Faqs.FaqsListDescription"] = "Description",
+                ["Plugins.Widgets.Faqs.FaqsListOrder"] = "Order",
+                ["Plugins.Widgets.Faqs.Settings"] = "Settings",
+                ["Plugins.Widgets.Faqs.FaqsListUpdateButton"] = "Edit",
+                ["Plugins.Widgets.Faqs.FaqsListSaveButton"] = "Save",
             });
+
 
             await base.InstallAsync();
         }
@@ -127,6 +145,50 @@ namespace Nop.Plugin.Widgets.Faqs
 
             await base.UninstallAsync();
         }
+
+        public Task ManageSiteMapAsync(SiteMapNode rootNode)
+        {
+
+            var parentNode = new SiteMapNode()
+            {
+                SystemName = this.PluginDescriptor.SystemName,
+                Title = "Faqs",
+                IconClass = "fas fa-question",
+                Visible = true,
+                RouteValues = new RouteValueDictionary() { { "area", null } },
+            };
+            parentNode.ChildNodes.Add(new SiteMapNode()
+            {
+                Title = "Configure",
+                ControllerName = "Faqs", // Your controller Name
+                ActionName = "Configure", // Action Name
+                Visible = true,
+                SystemName = this.PluginDescriptor.SystemName,
+                RouteValues = new RouteValueDictionary() { },
+            });
+            parentNode.ChildNodes.Add(new SiteMapNode()
+            {
+                SystemName = FaqsDefaults.SystemName,
+                Title = "Faq Add",
+                ControllerName = "Faqs",
+                ActionName = "Add",
+                Visible = true,
+                RouteValues = new RouteValueDictionary() { }
+            });
+            parentNode.ChildNodes.Add(new SiteMapNode()
+            {
+                SystemName = FaqsDefaults.SystemName,
+                Title = "Faq List",
+                ControllerName = "Faqs",
+                ActionName = "List",
+                Visible = true,
+                RouteValues = new RouteValueDictionary() {   }
+            });
+            rootNode.ChildNodes.Add(parentNode);
+
+            return Task.CompletedTask;
+        }
+
 
         #endregion
 

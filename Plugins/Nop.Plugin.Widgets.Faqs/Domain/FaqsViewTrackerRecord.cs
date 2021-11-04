@@ -6,5 +6,6 @@ namespace Nop.Plugin.Widgets.Faqs.Models.Domain
     {
         public string Title { get; set; }
         public string Description { get; set; }
+        public string Order { get; set; }
     }
 }
