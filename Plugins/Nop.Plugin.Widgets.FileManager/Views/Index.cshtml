@@ -1,0 +1,75 @@
+﻿@{Layout = "_ColumnsTwo";}
+@section left
+    {
+    @await Component.InvokeAsync("CustomerNavigation", new { selectedTabId = CustomerNavigationEnum.Info })
+}
+<div class="demo-container">
+    <div id="file-manager"></div>
+    <div id="photo-popup"></div>
+</div>
+<style>
+    .photo-popup-content {
+        text-align: center;
+    }
+
+        .photo-popup-content .photo-popup-image {
+            height: 100%;
+            max-width: 100%;
+        }
+</style>
+
+
+<!-- Theme stylesheets (reference only one of them) -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.light.css" rel="stylesheet">
+
+
+<!-- DevExtreme Quill (required by the HtmlEditor UI component) -->
+<script asp-location="Footer" src="https://cdnjs.cloudflare.com/ajax/libs/devextreme-quill/1.5.5/dx-quill.min.js"></script>
+
+<!-- DevExtreme library -->
+<script asp-location="Footer" src="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/js/dx.all.js"></script>
+
+<!-- DevExpress.AspNet.Data -->
+<script asp-location="Footer" src="https://cdnjs.cloudflare.com/ajax/libs/devextreme-aspnet-data/2.8.6/dx.aspnet.data.min.js"></script>
+
+<script asp-location="Footer">
+
+    $(() => {
+        const provider = new DevExpress.fileManagement.RemoteFileSystemProvider({
+            endpointUrl: 'https://js.devexpress.com/Demos/Mvc/api/file-manager-file-system-images',
+        });
+
+        $('#file-manager').dxFileManager({
+            name: 'fileManager',
+            fileSystemProvider: provider,
+            currentPath: 'Widescreen',
+            permissions: {
+                create: true,
+                copy: true,
+                move: true,
+                delete: true,
+                rename: true,
+                upload: true,
+                download: true,
+            },
+            onSelectedFileOpened(e) {
+                const popup = $('#photo-popup').dxPopup('instance');
+                popup.option({
+                    title: e.file.name,
+                    contentTemplate: `<img src="${e.file.dataItem.url}" class="photo-popup-image" />`,
+                });
+                popup.show();
+            },
+        });
+
+        $('#photo-popup').dxPopup({
+            maxHeight: 600,
+            closeOnOutsideClick: true,
+            onContentReady(e) {
+                const $contentElement = e.component.content();
+                $contentElement.addClass('photo-popup-content');
+            },
+        });
+    });
+
+</script>

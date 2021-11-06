@@ -1,0 +1,48 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <Copyright>Copyright ©</Copyright>
+    <Company>hafsasoft</Company>
+    <Authors>hafsasoft</Authors>
+    <PackageLicenseUrl>PACKAGE_LICENSE_URL</PackageLicenseUrl>
+    <PackageProjectUrl>PACKAGE_PROJECT_URL</PackageProjectUrl>
+    <RepositoryUrl>REPOSITORY_URL</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <OutputPath>..\..\Presentation\Nop.Web\Plugins\Widgets.FileManager</OutputPath>
+    <OutDir>$(OutputPath)</OutDir>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Views\Index.cshtml" />
+    <None Remove="Views\Link.cshtml" />
+    <None Remove="Views\_ViewImports.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ClearPluginAssemblies Include="$(MSBuildProjectDirectory)\..\..\Build\ClearPluginAssemblies.proj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Views\Index.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Link.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\_ViewImports.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Presentation\Nop.Web.Framework\Nop.Web.Framework.csproj" />
+    <ProjectReference Include="..\..\Presentation\Nop.Web\Nop.Web.csproj" />
+  </ItemGroup>
+
+  <!-- This target execute after "Build" target -->
+  <Target Name="NopTarget" AfterTargets="Build">
+    <!-- Delete unnecessary libraries from plugins path -->
+    <MSBuild Projects="@(ClearPluginAssemblies)" Properties="PluginPath=$(MSBuildProjectDirectory)\$(OutDir)" Targets="NopClear" />
+  </Target>
+
+</Project>

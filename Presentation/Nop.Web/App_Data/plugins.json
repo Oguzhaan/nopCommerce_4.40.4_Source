@@ -82,6 +82,10 @@
     {
       "SystemName": "Widgets.Faqs",
       "Version": "1.10"
+    },
+    {
+      "SystemName": "Widgets.FileManager",
+      "Version": "1.10"
     }
   ],
   "PluginNamesToUninstall": [],
