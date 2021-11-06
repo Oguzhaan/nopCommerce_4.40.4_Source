@@ -176,23 +176,38 @@ namespace Nop.Plugin.Widgets.Backup
 
         public Task ManageSiteMapAsync(SiteMapNode rootNode)
         {
-            var menuItem = new SiteMapNode()
+
+            var parentNode = new SiteMapNode()
             {
-                SystemName = "Widgets.Backup",
-                Title = "Backup Plugin",
-                ControllerName = "Backup",
-                ActionName = "Configure",
+                SystemName = this.PluginDescriptor.SystemName,
+                Title = "Backup",
+                IconClass = "fas fa-story",
                 Visible = true,
                 RouteValues = new RouteValueDictionary() { { "area", null } },
             };
-            var pluginNode = rootNode.ChildNodes.FirstOrDefault(x => x.SystemName == "Widgets.Backup");
-            if (pluginNode != null)
-                pluginNode.ChildNodes.Add(menuItem);
-            else
-                rootNode.ChildNodes.Add(menuItem);
+            parentNode.ChildNodes.Add(new SiteMapNode()
+            {
+                Title = "Configure",
+                ControllerName = "Backup", // Your controller Name
+                ActionName = "Configure", // Action Name
+                Visible = true,
+                SystemName = this.PluginDescriptor.SystemName,
+                RouteValues = new RouteValueDictionary() { },
+            });
+            parentNode.ChildNodes.Add(new SiteMapNode()
+            {
+                SystemName = BackupDefaults.SystemName,
+                Title = "Backup List",
+                ControllerName = "Backup",
+                ActionName = "List",
+                Visible = true,
+                RouteValues = new RouteValueDictionary() { }
+            });
+            rootNode.ChildNodes.Add(parentNode);
 
             return Task.CompletedTask;
         }
+
 
         #endregion
 

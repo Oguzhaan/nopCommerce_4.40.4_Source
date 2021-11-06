@@ -1,0 +1,200 @@
+﻿@model ConfigurationModel
+
+@{
+    Layout = "_AdminLayout";
+}
+
+@await Component.InvokeAsync("StoreScopeConfiguration")
+
+<script type="text/javascript">
+
+        var backupType =  '@((int)Model.BackupType)';
+        var backupWeek =  '@(Model.DayOfWeek)';
+        var backupMonth = '@(Model.DayOfMonth)';
+    $(document).ready(function () {
+        $("[name='BackupType']").val(backupType);
+        $("[name='DayOfWeek']").val(backupWeek);
+        $("[name='DayOfMonth']").val(backupMonth);
+        toggleFields();
+
+
+    });
+    function nowBackup() {
+          $.ajax({
+                    type: "post",
+                    url: "@Html.Raw(Url.Action("RunBackup", "Backup"))",
+                    success: function (data) {
+                        alert(data);
+                    },
+                    error: function (xhr, ajaxoptions, thrownerror) {
+                        alert('failed to run backup.');
+                    }
+                });
+    }
+    function toggleFields() {
+        var value = $("[name='BackupType']").find(":selected").val();
+        switch (value) {
+            case '0'://Daily Backup
+                $('#pnlBackupTime').show();
+                $('#pnlBackupDay').hide();
+                $('#pnlBackupMonth').hide();
+                break;
+            case '1'://Weekly Backup
+                $('#pnlBackupTime').show();
+                $('#pnlBackupDay').show();
+                $('#pnlBackupMonth').hide();
+                break;
+            case '2'://Monthly Backup
+                $('#pnlBackupTime').show();
+                $('#pnlBackupDay').hide();
+                $('#pnlBackupMonth').show();
+                break;
+        }
+    }
+</script>
+@using (Html.BeginForm())
+{
+
+    <div class="content-header clearfix">
+        <h1 class="float-left">Backup Settings</h1>
+        <div class="float-right">
+            <button class="btn btn-primary" onclick="nowBackup();">
+                <i class="fas fa-plus-square"></i> @T(" Nop.Plugin.Widgets.Backup.Tabs.RunBackupNow")
+            </button>
+            <button class="btn btn-primary" type="submit">
+                <i class="fas fa-plus-square"></i> @T(" Nop.Plugin.Widgets.Backup.Tabs.Save")
+            </button>
+        </div>
+    </div>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="form-horizontal">
+                <div class="cards-group">
+                    <div class="card card-default card-search">
+                        <div class="card-body">
+                            <div class="row search-row opened">
+                                <div class="search-text">Settings</div>
+                                <div class="icon-search">
+                                    <i class="fas fa-cogs" aria-hidden="true"></i>
+                                </div><div class="icon-collapse">
+                                    <i class="far fa-angle-up" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div class="search-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group row">
+                                            <div class="col-md-4">
+                                                <div class="label-wrapper">
+                                                    <label class="col-form-label" for="SearchCategoryName"> @Html.LabelFor(Model => Model.DatabaseName)</label>
+                                                    <div title="" data-toggle="tooltip" class="ico-help" data-original-title="Bir kategori adı."><i class="fas fa-question-circle"></i></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                @(Model.DatabaseName)
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-4">
+                                                <div class="label-wrapper">
+                                                    <label class="col-form-label" for="SearchCategoryName">  @Html.LabelFor(Model => Model.BackupType)</label>
+                                                    <div title="" data-toggle="tooltip" class="ico-help" data-original-title="Bir kategori adı."><i class="fas fa-question-circle"></i></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <select class="custom-select d-block w-100" name="BackupType" required="" onchange="toggleFields();">
+                                                    <option value="@BackupType.daily.GetHashCode()">@BackupType.daily.ToString()</option>
+                                                    <option value="@BackupType.weekly.GetHashCode()">@BackupType.weekly.ToString()</option>
+                                                    <option value="@BackupType.monthly.GetHashCode()">@BackupType.monthly.ToString()</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row" id="pnlBackupTime">
+                                            <div class="col-md-4">
+                                                <div class="label-wrapper">
+                                                    <label class="col-form-label" for="SearchCategoryName">   @Html.LabelFor(Model => Model.BackupTime)</label>
+                                                    <div title="" data-toggle="tooltip" class="ico-help" data-original-title="Bir kategori adı."><i class="fas fa-question-circle"></i></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <input class="form-control text-box single-line" name="BackupTime" value="@Model.BackupTime" type="time">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row" id="pnlBackupDay">
+                                            <div class="col-md-4">
+                                                <div class="label-wrapper">
+                                                    <label class="col-form-label" for="SearchCategoryName">  @Html.LabelFor(Model => Model.DayOfWeek)</label>
+                                                    <div title="" data-toggle="tooltip" class="ico-help" data-original-title="Bir kategori adı."><i class="fas fa-question-circle"></i></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <select class="custom-select d-block w-100" name="DayOfWeek">
+                                                    <option value="" selected></option>
+                                                    <option value="Monday">@T("Nop.Plugin.Widgets.Backup.Fields.Monday")</option>
+                                                    <option value="Tuesday">@T("Nop.Plugin.Widgets.Backup.Fields.Tuesday")</option>
+                                                    <option value="Wednesday">@T("Nop.Plugin.Widgets.Backup.Fields.Wednesday")</option>
+                                                    <option value="Thursday">@T("Nop.Plugin.Widgets.Backup.Fields.Thursday")</option>
+                                                    <option value="Friday">@T("Nop.Plugin.Widgets.Backup.Fields.Friday")</option>
+                                                    <option value="Saturday">@T("Nop.Plugin.Widgets.Backup.Fields.Saturday")</option>
+                                                    <option value="Sunday">@T("Nop.Plugin.Widgets.Backup.Fields.Sunday")</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row" id="pnlBackupMonth">
+                                            <div class="col-md-4">
+                                                <div class="label-wrapper">
+                                                    <label class="col-form-label" for="SearchCategoryName"> @Html.LabelFor(Model => Model.DayOfMonth)</label>
+                                                    <div title="" data-toggle="tooltip" class="ico-help" data-original-title="Bir kategori adı."><i class="fas fa-question-circle"></i></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8">
+                                                <select class="custom-select d-block w-100" name="DayOfMonth">
+                                                    <option value="" selected></option>
+                                                    <option value="01">1</option>
+                                                    <option value="02">2</option>
+                                                    <option value="03">3</option>
+                                                    <option value="04">4</option>
+                                                    <option value="05">5</option>
+                                                    <option value="06">6</option>
+                                                    <option value="07">7</option>
+                                                    <option value="08">8</option>
+                                                    <option value="09">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                    <option value="13">13</option>
+                                                    <option value="14">14</option>
+                                                    <option value="15">15</option>
+                                                    <option value="16">16</option>
+                                                    <option value="17">17</option>
+                                                    <option value="18">18</option>
+                                                    <option value="19">19</option>
+                                                    <option value="20">20</option>
+                                                    <option value="21">21</option>
+                                                    <option value="22">22</option>
+                                                    <option value="23">23</option>
+                                                    <option value="24">24</option>
+                                                    <option value="25">25</option>
+                                                    <option value="26">26</option>
+                                                    <option value="27">27</option>
+                                                    <option value="28">28</option>
+                                                    <option value="29">29</option>
+                                                    <option value="30">30</option>
+                                                    <option value="31">31</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+}

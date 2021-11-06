@@ -86,6 +86,10 @@
     {
       "SystemName": "Widgets.FileManager",
       "Version": "1.10"
+    },
+    {
+      "SystemName": "Widgets.Backup",
+      "Version": "1.00"
     }
   ],
   "PluginNamesToUninstall": [],

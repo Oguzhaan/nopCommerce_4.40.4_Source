@@ -10,18 +10,13 @@ namespace Nop.Plugin.Widgets.Backup.Models
     {
         #region Properties
 
-        public bool IsSqlBackupDirectoryPermission { get; set; }
-        public bool IsBackupPermission { get; set; }
-        public bool IsBulkStatementPermission { get; set; }
-        public bool IsConnectedGoogleDrive { get; set; }
-
-        [NopResourceDisplayName("Nop.Plugin.Widgets.Backup.Fields.Enabled")]
-        public bool Enabled { get; set; }
         [NopResourceDisplayName("Nop.Plugin.Widgets.Backup.Fields.DatabaseName")]
-        public string DatabaseName { get; set; } 
-        
+        public string DatabaseName { get; set; }
+
         [NopResourceDisplayName("Nop.Plugin.Widgets.Backup.Fields.BackupType")]
         public BackupType BackupType { get; set; }
+
+
 
         [NopResourceDisplayName("Nop.Plugin.Widgets.Backup.Fields.BackupTime")]
         public string BackupTime { get; set; }
@@ -29,20 +24,15 @@ namespace Nop.Plugin.Widgets.Backup.Models
         public string DayOfWeek { get; set; }
         [NopResourceDisplayName("Nop.Plugin.Widgets.Backup.Fields.DayOfMonth")]
         public string DayOfMonth { get; set; }
-        [NopResourceDisplayName("Nop.Plugin.Widgets.Backup.Fields.UploadToGoogleDrive")]
-        public bool UploadToGoogleDrive { get; set; }
-        [NopResourceDisplayName("Nop.Plugin.Widgets.Backup.Fields.GoogleDriveClientId")]
-        public string GoogleDriveClientId { get; set; }
-        [NopResourceDisplayName("Nop.Plugin.Widgets.Backup.Fields.GoogleDriveClientSecret")]
-        public string GoogleDriveClientSecret { get; set; }
-        [NopResourceDisplayName("Nop.Plugin.Widgets.Backup.Fields.GoogleDriveAPIKey")]
-        public string GoogleDriveAPIKey { get; set; }
-        [NopResourceDisplayName("Nop.Plugin.Widgets.Backup.Fields.RedirectURL")]
-        public string RedirectURL { get; set; }
 
+        public bool BackupTime_OverrideForStore { get; set; }
+        public bool DatabaseName_OverrideForStore { get; set; }
+        public bool DayOfMonth_OverrideForStore { get; set; }
+        public bool DayOfWeek_OverrideForStore { get; set; }
+        public bool BackupType_OverrideForStore { get; set; }
         public int ActiveStoreScopeConfiguration { get; set; }
 
-      
+
 
         #endregion
     }
