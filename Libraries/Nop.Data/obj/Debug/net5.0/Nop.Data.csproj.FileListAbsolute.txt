@@ -590,7 +590,6 @@ C:\Users\oguzh\Documents\Github\nopCommerce_4.40.4_Source\Libraries\Nop.Data\obj
 C:\Users\oguzh\Documents\Github\nopCommerce_4.40.4_Source\Libraries\Nop.Data\obj\Debug\net5.0\Nop.Data.AssemblyInfoInputs.cache
 C:\Users\oguzh\Documents\Github\nopCommerce_4.40.4_Source\Libraries\Nop.Data\obj\Debug\net5.0\Nop.Data.AssemblyInfo.cs
 C:\Users\oguzh\Documents\Github\nopCommerce_4.40.4_Source\Libraries\Nop.Data\obj\Debug\net5.0\Nop.Data.csproj.CoreCompileInputs.cache
-C:\Users\oguzh\Documents\Github\nopCommerce_4.40.4_Source\Libraries\Nop.Data\obj\Debug\net5.0\Nop.Data.csproj.CopyComplete
 C:\Users\oguzh\Documents\Github\nopCommerce_4.40.4_Source\Libraries\Nop.Data\obj\Debug\net5.0\Nop.Data.dll
 C:\Users\oguzh\Documents\Github\nopCommerce_4.40.4_Source\Libraries\Nop.Data\obj\Debug\net5.0\ref\Nop.Data.dll
 C:\Users\oguzh\Documents\Github\nopCommerce_4.40.4_Source\Libraries\Nop.Data\obj\Debug\net5.0\Nop.Data.pdb

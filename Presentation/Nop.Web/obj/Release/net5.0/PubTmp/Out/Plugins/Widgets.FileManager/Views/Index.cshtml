@@ -1,0 +1,114 @@
+﻿@{Layout = "_ColumnsTwo";}
+@section left
+    {
+    @await Component.InvokeAsync("CustomerNavigation", new { selectedTabId = CustomerNavigationEnum.Info })
+}
+<div class="demo-container">
+    <div id="file-manager"></div>
+    <div id="photo-popup"></div>
+</div>
+<style>
+    .photo-popup-content {
+        text-align: center;
+    }
+
+        .photo-popup-content .photo-popup-image {
+            height: 100%;
+            max-width: 100%;
+        }
+</style>
+
+
+<!-- Theme stylesheets (reference only one of them) -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.carmine.compact.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.carmine.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.contrast.compact.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.contrast.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.dark.compact.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.dark.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.darkmoon.compact.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.darkmoon.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.darkviolet.compact.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.darkviolet.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.greenmist.compact.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.greenmist.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.light.compact.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.light.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.material.blue.dark.compact.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.material.blue.dark.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.material.blue.light.compact.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.material.blue.light.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.material.lime.dark.compact.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.material.lime.dark.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.material.lime.light.compact.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.material.lime.light.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.material.orange.dark.compact.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.material.orange.dark.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.material.orange.light.compact.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.material.orange.light.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.material.purple.dark.compact.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.material.purple.dark.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.material.purple.light.compact.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.material.purple.light.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.material.teal.dark.compact.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.material.teal.dark.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.material.teal.light.compact.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.material.teal.light.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.softblue.compact.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/css/dx.softblue.css" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/devexpress-diagram/2.1.37/dx-diagram.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/devexpress-gantt/3.1.24/dx-gantt.min.js"></script>
+
+<!-- DevExtreme Quill (required by the HtmlEditor UI component) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/devextreme-quill/1.5.5/dx-quill.min.js"></script>
+
+<!-- DevExtreme library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/devextreme/21.2.3/js/dx.all.js"></script>
+
+<!-- DevExpress.AspNet.Data -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/devextreme-aspnet-data/2.8.6/dx.aspnet.data.min.js"></script>
+<!-- Diagram and Gantt stylesheets -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devexpress-diagram/2.1.37/dx-diagram.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/devexpress-gantt/3.1.24/dx-gantt.min.css" rel="stylesheet">
+<script asp-location="Footer">
+
+    $(() => {
+        const provider = new DevExpress.fileManagement.RemoteFileSystemProvider({
+            endpointUrl: 'https://js.devexpress.com/Demos/Mvc/api/file-manager-file-system-images',
+        });
+
+        $('#file-manager').dxFileManager({
+            name: 'fileManager',
+            fileSystemProvider: provider,
+            currentPath: 'Widescreen',
+            permissions: {
+                create: true,
+                copy: true,
+                move: true,
+                delete: true,
+                rename: true,
+                upload: true,
+                download: true,
+            },
+            onSelectedFileOpened(e) {
+                const popup = $('#photo-popup').dxPopup('instance');
+                popup.option({
+                    title: e.file.name,
+                    contentTemplate: `<img src="${e.file.dataItem.url}" class="photo-popup-image" />`,
+                });
+                popup.show();
+            },
+        });
+
+        $('#photo-popup').dxPopup({
+            maxHeight: 600,
+            closeOnOutsideClick: true,
+            onContentReady(e) {
+                const $contentElement = e.component.content();
+                $contentElement.addClass('photo-popup-content');
+            },
+        });
+    });
+
+</script>

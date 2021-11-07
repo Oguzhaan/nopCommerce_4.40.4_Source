@@ -1,0 +1,19 @@
+﻿@model List<FaqsViewTrackerRecord>
+@{Layout = "_ColumnsOne";}
+<div id="faqaccordion">
+    @foreach (var item in Model)
+    {
+        <h3>@item.Title</h3>
+        <div>
+            <p>
+                @item.Description
+            </p>
+        </div>
+    }
+</div>
+
+<script asp-location="Footer">
+    $(function () {
+        $("#faqaccordion").accordion();
+    });
+</script>

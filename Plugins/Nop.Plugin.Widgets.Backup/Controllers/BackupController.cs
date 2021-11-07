@@ -147,7 +147,8 @@ namespace Nop.Plugin.Widgets.Backup.Controllers
         {
             
             var dbName = DataSettingsManager.LoadSettings().ConnectionString.Split(";")[1].Split("=")[1];
-            SqlConnection sqlconn = new SqlConnection(DataSettingsManager.LoadSettings().ConnectionString);
+            string connectionstr = "Data Source=OGUZHAN\\SQLEXPRESS2014;Initial Catalog=NopTest;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=adm123";
+            SqlConnection sqlconn = new SqlConnection(connectionstr);
             SqlCommand sqlcmd = new SqlCommand();
             SqlDataAdapter da = new SqlDataAdapter();
             // Backup destibation

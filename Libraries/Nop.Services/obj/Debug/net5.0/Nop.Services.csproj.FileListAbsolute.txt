@@ -594,7 +594,6 @@ C:\Users\oguzh\Documents\Github\nopCommerce_4.40.4_Source\Libraries\Nop.Services
 C:\Users\oguzh\Documents\Github\nopCommerce_4.40.4_Source\Libraries\Nop.Services\obj\Debug\net5.0\Nop.Services.AssemblyInfoInputs.cache
 C:\Users\oguzh\Documents\Github\nopCommerce_4.40.4_Source\Libraries\Nop.Services\obj\Debug\net5.0\Nop.Services.AssemblyInfo.cs
 C:\Users\oguzh\Documents\Github\nopCommerce_4.40.4_Source\Libraries\Nop.Services\obj\Debug\net5.0\Nop.Services.csproj.CoreCompileInputs.cache
-C:\Users\oguzh\Documents\Github\nopCommerce_4.40.4_Source\Libraries\Nop.Services\obj\Debug\net5.0\Nop.Services.csproj.CopyComplete
 C:\Users\oguzh\Documents\Github\nopCommerce_4.40.4_Source\Libraries\Nop.Services\obj\Debug\net5.0\Nop.Services.dll
 C:\Users\oguzh\Documents\Github\nopCommerce_4.40.4_Source\Libraries\Nop.Services\obj\Debug\net5.0\ref\Nop.Services.dll
 C:\Users\oguzh\Documents\Github\nopCommerce_4.40.4_Source\Libraries\Nop.Services\obj\Debug\net5.0\Nop.Services.pdb

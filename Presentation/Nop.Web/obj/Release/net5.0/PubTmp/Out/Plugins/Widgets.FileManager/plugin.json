@@ -1,0 +1,16 @@
+﻿{
+  "Group": "Widgets",
+  "FriendlyName": "FileManager",
+  "SupportedVersions": [
+    "4.40"
+  ],
+  "Author": "hafsasoft",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Widgets.FileManager.dll",
+  "Description": "This is a FileManager widget",
+  "LimitedToStores": [],
+  "LimitedToCustomerRoles": [],
+  "DependsOnSystemNames": [],
+  "SystemName": "Widgets.FileManager",
+  "Version": "1.10"
+}

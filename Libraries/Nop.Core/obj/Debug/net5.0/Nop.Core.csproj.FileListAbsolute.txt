@@ -586,7 +586,6 @@ C:\Users\oguzh\Documents\Github\nopCommerce_4.40.4_Source\Libraries\Nop.Core\obj
 C:\Users\oguzh\Documents\Github\nopCommerce_4.40.4_Source\Libraries\Nop.Core\obj\Debug\net5.0\Nop.Core.dll
 C:\Users\oguzh\Documents\Github\nopCommerce_4.40.4_Source\Libraries\Nop.Core\obj\Debug\net5.0\ref\Nop.Core.dll
 C:\Users\oguzh\Documents\Github\nopCommerce_4.40.4_Source\Libraries\Nop.Core\obj\Debug\net5.0\Nop.Core.pdb
-C:\Users\oguzh\Documents\Github\nopCommerce_4.40.4_Source\Libraries\Nop.Core\obj\Debug\net5.0\Nop.Core.csproj.AssemblyReference.cache
 C:\Users\Zafer\Documents\GitHub\nopCommerce_4.40.4_Source\Libraries\Nop.Core\bin\Debug\net5.0\Nop.Core.deps.json
 C:\Users\Zafer\Documents\GitHub\nopCommerce_4.40.4_Source\Libraries\Nop.Core\bin\Debug\net5.0\Nop.Core.dll
 C:\Users\Zafer\Documents\GitHub\nopCommerce_4.40.4_Source\Libraries\Nop.Core\bin\Debug\net5.0\ref\Nop.Core.dll
@@ -882,3 +881,4 @@ C:\Users\Zafer\Documents\GitHub\nopCommerce_4.40.4_Source\Libraries\Nop.Core\obj
 C:\Users\Zafer\Documents\GitHub\nopCommerce_4.40.4_Source\Libraries\Nop.Core\obj\Debug\net5.0\Nop.Core.dll
 C:\Users\Zafer\Documents\GitHub\nopCommerce_4.40.4_Source\Libraries\Nop.Core\obj\Debug\net5.0\ref\Nop.Core.dll
 C:\Users\Zafer\Documents\GitHub\nopCommerce_4.40.4_Source\Libraries\Nop.Core\obj\Debug\net5.0\Nop.Core.pdb
+C:\Users\oguzh\Documents\Github\nopCommerce_4.40.4_Source\Libraries\Nop.Core\obj\Debug\net5.0\Nop.Core.csproj.AssemblyReference.cache

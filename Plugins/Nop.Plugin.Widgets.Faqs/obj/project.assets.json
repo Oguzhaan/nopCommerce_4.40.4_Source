@@ -13383,19 +13383,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Zafer\\.nuget\\packages\\": {}
+    "C:\\Users\\oguzh\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Plugins\\Nop.Plugin.Widgets.Faqs\\Nop.Plugin.Widgets.Faqs.csproj",
+      "projectUniqueName": "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Plugins\\Nop.Plugin.Widgets.Faqs\\Nop.Plugin.Widgets.Faqs.csproj",
       "projectName": "Nop.Plugin.Widgets.Faqs",
-      "projectPath": "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Plugins\\Nop.Plugin.Widgets.Faqs\\Nop.Plugin.Widgets.Faqs.csproj",
-      "packagesPath": "C:\\Users\\Zafer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Plugins\\Nop.Plugin.Widgets.Faqs\\obj\\",
+      "projectPath": "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Plugins\\Nop.Plugin.Widgets.Faqs\\Nop.Plugin.Widgets.Faqs.csproj",
+      "packagesPath": "C:\\Users\\oguzh\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Plugins\\Nop.Plugin.Widgets.Faqs\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Zafer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\oguzh\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13409,8 +13409,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj": {
-              "projectPath": "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj"
+            "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj": {
+              "projectPath": "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj"
             }
           }
         }
@@ -13439,7 +13439,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

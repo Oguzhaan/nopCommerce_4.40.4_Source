@@ -1,0 +1,41 @@
+﻿@model ConfigurationModel
+
+@{
+    Layout = "_ConfigurePlugin";
+}
+
+@await Component.InvokeAsync("StoreScopeConfiguration")
+
+
+<form asp-controller="Faqs" asp-action="Configure" method="post">
+    <div class="cards-group">
+        <div class="card card-default">
+            <div class="card-body">
+                <p>
+                    @Html.Raw(T("Plugins.Widgets.Faqs.EditWherePlugin")):<br />
+                    @Html.Raw(T("Plugins.Widgets.Faqs.AddFaqStr")) @Html.ActionLink("Add a new faq", "Add", "Faqs")
+                    @Html.Raw(T("Plugins.Widgets.Faqs.EditFaqList")) @Html.ActionLink("Faq List", "List", "Faqs")
+                </p>
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <div class="label-wrapper">
+                            <label class="col-form-label" for="Title">@Html.Raw(T("Plugins.Widgets.Faqs.ViewZone"))</label>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <select class="form-control text-box single-line" name="WidgetZone">
+                            <option value="@PublicWidgetZones.HeaderMenuAfter">Header</option>
+                        </select>
+                        <span class="field-validation-valid" data-valmsg-for="Title" data-valmsg-replace="true">
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-9 offset-md-3">
+                        <input type="submit" name="save" class="btn btn-primary" value="@T("Admin.Common.Save")" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

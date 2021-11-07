@@ -1,0 +1,11 @@
+﻿{
+  "Group": "Widgets",
+  "FriendlyName": "Backup",
+  "SystemName": "Widgets.Backup",
+  "Version": "1.00",
+  "SupportedVersions": [ "4.40" ],
+  "Author": "hesnaakay",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Widgets.Backup.dll",
+  "Description": "Backup Plugin"
+}
