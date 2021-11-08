@@ -132,7 +132,11 @@ namespace Nop.Plugin.Widgets.Backup.Controllers
                 {
 
                     DateTime dateTime = DateTime.ParseExact(model.BackupTime + ":00", "HH:mm:ss", CultureInfo.InvariantCulture);
-                    Cron.time = dateTime.Millisecond;
+                    if(dateTime < DateTime.Now)
+                    {
+                    Cron.firstTime = (int)(dateTime.AddDays(1) - dateTime).TotalMilliseconds;
+                    Cron.time = 86400;
+                    }
                 }
             }
             else if (model.BackupType == BackupType.weekly)
@@ -167,10 +171,10 @@ namespace Nop.Plugin.Widgets.Backup.Controllers
 
         [HttpPost]
         [IgnoreAntiforgeryToken]
-        public async Task<JsonResult> RunBackup()
+        public async Task<string> RunBackup()
         {
-            var result = new SetBackup().Set(true);
-            return Json(Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(result));
+            var result = new SetBackup().Set(_hostingEnvironment,true);
+            return result;
         }
         #endregion
     }

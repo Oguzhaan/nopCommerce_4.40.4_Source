@@ -1,4 +1,5 @@
-﻿using Nop.Plugin.Widgets.Backup.Models;
+﻿using Microsoft.AspNetCore.Hosting;
+using Nop.Plugin.Widgets.Backup.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,13 +15,16 @@ namespace Nop.Plugin.Widgets.Backup.Components
         public static Thread _thread;
         public static ManualResetEvent _shutdownEvent = new ManualResetEvent(false);
         public static int time = 0;
-
+        public static int firstTime = 0;
+        public static BackupType backupType;
+        private static IHostingEnvironment _hostingEnvironment;
         public Cron()
         {
         }
-        public Cron(int param)
+        public Cron(int time, BackupType backupType)
         {
-            time = param;
+            time = time;
+            backupType = backupType;
         }
         public static void ProcessTask()
         {
@@ -32,7 +36,7 @@ namespace Nop.Plugin.Widgets.Backup.Components
                     Thread.Sleep(time);
                     try
                     {
-                        new SetBackup().Set(true);
+                        //new SetBackup().Set(_hostingEnvironment,true);
                     }
                     catch (Exception)
                     {

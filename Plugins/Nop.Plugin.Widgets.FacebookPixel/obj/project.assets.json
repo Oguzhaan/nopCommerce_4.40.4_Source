@@ -13407,19 +13407,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\admin\\.nuget\\packages\\": {}
+    "C:\\Users\\Zafer\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\admin\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Plugins\\Nop.Plugin.Widgets.FacebookPixel\\Nop.Plugin.Widgets.FacebookPixel.csproj",
+      "projectUniqueName": "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Plugins\\Nop.Plugin.Widgets.FacebookPixel\\Nop.Plugin.Widgets.FacebookPixel.csproj",
       "projectName": "Nop.Plugin.Widgets.FacebookPixel",
-      "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Plugins\\Nop.Plugin.Widgets.FacebookPixel\\Nop.Plugin.Widgets.FacebookPixel.csproj",
-      "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\admin\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Plugins\\Nop.Plugin.Widgets.FacebookPixel\\obj\\",
+      "projectPath": "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Plugins\\Nop.Plugin.Widgets.FacebookPixel\\Nop.Plugin.Widgets.FacebookPixel.csproj",
+      "packagesPath": "C:\\Users\\Zafer\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Plugins\\Nop.Plugin.Widgets.FacebookPixel\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Zafer\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13433,8 +13433,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\admin\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Presentation\\Nop.Web\\Nop.Web.csproj": {
-              "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Presentation\\Nop.Web\\Nop.Web.csproj"
+            "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Presentation\\Nop.Web\\Nop.Web.csproj": {
+              "projectPath": "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Presentation\\Nop.Web\\Nop.Web.csproj"
             }
           }
         }
@@ -13463,7 +13463,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.207\\RuntimeIdentifierGraph.json"
       }
     }
   }

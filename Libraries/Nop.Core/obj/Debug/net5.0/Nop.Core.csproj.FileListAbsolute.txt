@@ -873,7 +873,6 @@ C:\Users\Zafer\Documents\GitHub\nopCommerce_4.40.4_Source\Libraries\Nop.Core\bin
 C:\Users\Zafer\Documents\GitHub\nopCommerce_4.40.4_Source\Libraries\Nop.Core\bin\Debug\net5.0\refs\System.Xml.XPath.dll
 C:\Users\Zafer\Documents\GitHub\nopCommerce_4.40.4_Source\Libraries\Nop.Core\bin\Debug\net5.0\refs\System.Xml.XPath.XDocument.dll
 C:\Users\Zafer\Documents\GitHub\nopCommerce_4.40.4_Source\Libraries\Nop.Core\bin\Debug\net5.0\refs\WindowsBase.dll
-C:\Users\Zafer\Documents\GitHub\nopCommerce_4.40.4_Source\Libraries\Nop.Core\obj\Debug\net5.0\Nop.Core.csprojAssemblyReference.cache
 C:\Users\Zafer\Documents\GitHub\nopCommerce_4.40.4_Source\Libraries\Nop.Core\obj\Debug\net5.0\Nop.Core.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Zafer\Documents\GitHub\nopCommerce_4.40.4_Source\Libraries\Nop.Core\obj\Debug\net5.0\Nop.Core.AssemblyInfoInputs.cache
 C:\Users\Zafer\Documents\GitHub\nopCommerce_4.40.4_Source\Libraries\Nop.Core\obj\Debug\net5.0\Nop.Core.AssemblyInfo.cs
@@ -1177,3 +1176,4 @@ C:\Users\admin\Documents\GitHub\nopCommerce_4.40.4_Source\Libraries\Nop.Core\obj
 C:\Users\admin\Documents\GitHub\nopCommerce_4.40.4_Source\Libraries\Nop.Core\obj\Debug\net5.0\Nop.Core.dll
 C:\Users\admin\Documents\GitHub\nopCommerce_4.40.4_Source\Libraries\Nop.Core\obj\Debug\net5.0\ref\Nop.Core.dll
 C:\Users\admin\Documents\GitHub\nopCommerce_4.40.4_Source\Libraries\Nop.Core\obj\Debug\net5.0\Nop.Core.pdb
+C:\Users\Zafer\Documents\GitHub\nopCommerce_4.40.4_Source\Libraries\Nop.Core\obj\Debug\net5.0\Nop.Core.csprojAssemblyReference.cache

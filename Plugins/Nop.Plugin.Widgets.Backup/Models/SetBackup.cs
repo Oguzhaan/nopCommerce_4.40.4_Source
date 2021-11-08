@@ -13,7 +13,6 @@ namespace Nop.Plugin.Widgets.Backup.Models
 {
     public class SetBackup : ISetBackup
     {
-        private readonly IHostingEnvironment _hostingEnvironment;
 
         public SetBackup()
         {
@@ -22,19 +21,18 @@ namespace Nop.Plugin.Widgets.Backup.Models
             Cron._thread.Start();
         }
 
-        public SetBackup(IHostingEnvironment hostingEnvironment) => _hostingEnvironment = hostingEnvironment;
 
-        public string Set(bool local = false)
+        public  string Set(IHostingEnvironment hostingEnvironment,bool local = false)
         {
             var dbName = DataSettingsManager.LoadSettings().ConnectionString.Split(";")[1].Split("=")[1];
             string connectionstr = "";
-            if (local) connectionstr = "Data Source=DESKTOP-2AOFC50\\SQLEXPRESS;Initial Catalog=NopDB;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=adm123";
+            if (local) connectionstr = "Data Source=MSI\\SQLEXPRESS;Initial Catalog=NopDB;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=adm123";
             else connectionstr = DataSettingsManager.LoadSettings().ConnectionString;
 
             SqlConnection sqlconn = new SqlConnection(connectionstr);
             SqlCommand sqlcmd = new SqlCommand();
             SqlDataAdapter da = new SqlDataAdapter();
-            string backupDestination = _hostingEnvironment.WebRootPath.Replace("\\wwwroot", "") + "\\Plugins\\Widgets.Backup\\Backup\\";
+            string backupDestination = hostingEnvironment.WebRootPath.Replace("\\wwwroot", "") + "\\Plugins\\Widgets.Backup\\Backup\\";
             if (!System.IO.Directory.Exists(backupDestination)) System.IO.Directory.CreateDirectory(backupDestination);
 
             try
