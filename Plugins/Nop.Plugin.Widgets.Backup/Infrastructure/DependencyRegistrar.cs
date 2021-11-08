@@ -2,6 +2,7 @@
 using Nop.Core.Configuration;
 using Nop.Core.Infrastructure;
 using Nop.Core.Infrastructure.DependencyManagement;
+using Nop.Plugin.Widgets.Backup.Models;
 using Nop.Plugin.Widgets.Backup.Services;
 
 namespace Nop.Plugin.Widgets.Backup.Infrastructure

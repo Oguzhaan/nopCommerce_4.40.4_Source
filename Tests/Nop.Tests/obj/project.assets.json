@@ -14573,19 +14573,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\oguzh\\.nuget\\packages\\": {}
+    "C:\\Users\\admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "4.4.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Tests\\Nop.Tests\\Nop.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\admin\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Tests\\Nop.Tests\\Nop.Tests.csproj",
       "projectName": "Nop.Tests",
-      "projectPath": "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Tests\\Nop.Tests\\Nop.Tests.csproj",
-      "packagesPath": "C:\\Users\\oguzh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Tests\\Nop.Tests\\obj\\",
+      "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Tests\\Nop.Tests\\Nop.Tests.csproj",
+      "packagesPath": "C:\\Users\\admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\admin\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Tests\\Nop.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\oguzh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -14599,17 +14599,17 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Libraries\\Nop.Core\\Nop.Core.csproj": {
-              "projectPath": "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Libraries\\Nop.Core\\Nop.Core.csproj"
+            "C:\\Users\\admin\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Libraries\\Nop.Core\\Nop.Core.csproj": {
+              "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Libraries\\Nop.Core\\Nop.Core.csproj"
             },
-            "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Libraries\\Nop.Services\\Nop.Services.csproj": {
-              "projectPath": "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Libraries\\Nop.Services\\Nop.Services.csproj"
+            "C:\\Users\\admin\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Libraries\\Nop.Services\\Nop.Services.csproj": {
+              "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Libraries\\Nop.Services\\Nop.Services.csproj"
             },
-            "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj": {
-              "projectPath": "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj"
+            "C:\\Users\\admin\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj": {
+              "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj"
             },
-            "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Presentation\\Nop.Web\\Nop.Web.csproj": {
-              "projectPath": "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Presentation\\Nop.Web\\Nop.Web.csproj"
+            "C:\\Users\\admin\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Presentation\\Nop.Web\\Nop.Web.csproj": {
+              "projectPath": "C:\\Users\\admin\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Presentation\\Nop.Web\\Nop.Web.csproj"
             }
           }
         }
@@ -14666,7 +14666,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

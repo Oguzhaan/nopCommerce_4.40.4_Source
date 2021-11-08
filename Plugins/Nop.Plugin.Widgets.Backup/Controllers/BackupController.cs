@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -7,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using Nop.Core;
 using Nop.Core.Domain.Cms;
 using Nop.Data;
+using Nop.Plugin.Widgets.Backup.Components;
 using Nop.Plugin.Widgets.Backup.Models;
 using Nop.Services.Configuration;
 using Nop.Services.Helpers;
@@ -124,7 +126,29 @@ namespace Nop.Plugin.Widgets.Backup.Controllers
             settings.DatabaseName = DataSettingsManager.LoadSettings().ConnectionString.Split(";")[1].Split("=")[1];
             settings.DayOfMonth = model.DayOfMonth;
             settings.DayOfWeek = model.DayOfWeek;
+            if (model.BackupType == BackupType.daily)
+            {
+                if (!string.IsNullOrEmpty(model.BackupTime) && model.BackupTime.IndexOf(":") > -1)
+                {
 
+                    DateTime dateTime = DateTime.ParseExact(model.BackupTime + ":00", "HH:mm:ss", CultureInfo.InvariantCulture);
+                    Cron.time = dateTime.Millisecond;
+                }
+            }
+            else if (model.BackupType == BackupType.weekly)
+            {
+                DateTime today = DateTime.Now;
+                DayOfWeek dayOfWeek = (DayOfWeek)Enum.Parse(typeof(DayOfWeek), model.DayOfWeek, true);
+                int delta = dayOfWeek - today.DayOfWeek;
+                DateTime newDay = today.AddDays(delta);
+                Cron.time = newDay.Millisecond;
+
+            }
+            else if (model.BackupType == BackupType.monthly)
+            {
+                DateTime today = new DateTime(DateTime.Now.Year, DateTime.Now.Month, Convert.ToInt32(model.DayOfMonth));
+                Cron.time = today.Millisecond;
+            }
             /* We do not clear cache after each setting update.
              * This behavior can increase performance because cached settings will not be cleared 
              * and loaded from database after each update */
@@ -145,35 +169,9 @@ namespace Nop.Plugin.Widgets.Backup.Controllers
         [IgnoreAntiforgeryToken]
         public async Task<JsonResult> RunBackup()
         {
-            
-            var dbName = DataSettingsManager.LoadSettings().ConnectionString.Split(";")[1].Split("=")[1];
-            string connectionstr = "Data Source=OGUZHAN\\SQLEXPRESS2014;Initial Catalog=NopTest;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=adm123";
-            SqlConnection sqlconn = new SqlConnection(connectionstr);
-            SqlCommand sqlcmd = new SqlCommand();
-            SqlDataAdapter da = new SqlDataAdapter();
-            // Backup destibation
-            string backupDestination = _hostingEnvironment.WebRootPath.Replace("\\wwwroot", "") + "\\Plugins\\Widgets.Backup\\Backup\\";
-            // check if backup folder exist, otherwise create it.
-            if (!System.IO.Directory.Exists(backupDestination))
-            {
-                System.IO.Directory.CreateDirectory(backupDestination);
-            }
-            try
-            {
-                sqlconn.Open();
-                backupDestination += DateTime.Now.ToString("yyyyMMddHHmmss") + ".bak";
-                sqlcmd = new SqlCommand("backup database "+ dbName + " to disk='" + backupDestination + "\'" , sqlconn);
-                sqlcmd.ExecuteNonQuery();
-                //Close connection
-                sqlconn.Close();
-                return ((Controller)this).Json("");
-            }
-            catch (Exception ex)
-            {
-                return ((Controller)this).Json((object)ex.Message);
-            }
+            var result = new SetBackup().Set(true);
+            return Json(Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(result));
         }
-
         #endregion
     }
 }

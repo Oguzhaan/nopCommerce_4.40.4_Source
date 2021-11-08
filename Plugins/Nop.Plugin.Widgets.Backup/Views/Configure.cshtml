@@ -128,13 +128,13 @@
                                             <div class="col-md-8">
                                                 <select class="custom-select d-block w-100" name="DayOfWeek">
                                                     <option value="" selected></option>
-                                                    <option value="Monday">@T("Nop.Plugin.Widgets.Backup.Fields.Monday")</option>
-                                                    <option value="Tuesday">@T("Nop.Plugin.Widgets.Backup.Fields.Tuesday")</option>
-                                                    <option value="Wednesday">@T("Nop.Plugin.Widgets.Backup.Fields.Wednesday")</option>
-                                                    <option value="Thursday">@T("Nop.Plugin.Widgets.Backup.Fields.Thursday")</option>
-                                                    <option value="Friday">@T("Nop.Plugin.Widgets.Backup.Fields.Friday")</option>
-                                                    <option value="Saturday">@T("Nop.Plugin.Widgets.Backup.Fields.Saturday")</option>
-                                                    <option value="Sunday">@T("Nop.Plugin.Widgets.Backup.Fields.Sunday")</option>
+                                                    <option value="@DayOfWeek.Monday.GetHashCode()">@T("Nop.Plugin.Widgets.Backup.Fields.Monday")</option>
+                                                    <option value="@DayOfWeek.Tuesday.GetHashCode()">@T("Nop.Plugin.Widgets.Backup.Fields.Tuesday")</option>
+                                                    <option value="@DayOfWeek.Wednesday.GetHashCode()">@T("Nop.Plugin.Widgets.Backup.Fields.Wednesday")</option>
+                                                    <option value="@DayOfWeek.Thursday.GetHashCode()">@T("Nop.Plugin.Widgets.Backup.Fields.Thursday")</option>
+                                                    <option value="@DayOfWeek.Friday.GetHashCode()">@T("Nop.Plugin.Widgets.Backup.Fields.Friday")</option>
+                                                    <option value="@DayOfWeek.Saturday.GetHashCode()">@T("Nop.Plugin.Widgets.Backup.Fields.Saturday")</option>
+                                                    <option value="@DayOfWeek.Sunday.GetHashCode()">@T("Nop.Plugin.Widgets.Backup.Fields.Sunday")</option>
                                                 </select>
                                             </div>
                                         </div>
