@@ -106,7 +106,7 @@ namespace Nop.Plugin.Widgets.Backup
                 ["Nop.Plugin.Widgets.Backup.Tabs.StorageSetting"] = "Storage Settings",
                 ["Nop.Plugin.Widgets.Backup.Tabs.BackupRepository"] = "Backup Repository",
                 ["Nop.Plugin.Widgets.Backup.Tabs.RunBackupNow"] = "Run Backup Now",
-                ["Nop.Plugin.Widgets.Backup.Backup.Fields.Enabled"] = "Enabled:",
+                ["Nop.Plugin.Widgets.Backup.Tabs.StopTask"] = "Stop Task",
                 ["Nop.Plugin.Widgets.Backup.Fields.DatabaseName"] = "Database Name:",
                 ["Nop.Plugin.Widgets.Backup.Fields.BackupType"] = "Backup Type:",
                 ["Nop.Plugin.Widgets.Backup.Fields.BackupTime"] = "Backup Time:",
@@ -146,7 +146,11 @@ namespace Nop.Plugin.Widgets.Backup
                 ["Nop.Plugin.Widgets.Backup.Fields.Thursday"] = "Thursday",
                 ["Nop.Plugin.Widgets.Backup.Fields.Friday"] = "Friday",
                 ["Nop.Plugin.Widgets.Backup.Fields.Saturday"] = "Saturday",
-                ["Nop.Plugin.Widgets.Backup.Fields.Sunday"] = "Sunday"
+                ["Nop.Plugin.Widgets.Backup.Fields.Sunday"] = "Sunday",
+                ["Nop.Plugin.Widgets.Backup.Fields.BackupName"] = "Backup Name",
+                ["Nop.Plugin.Widgets.Backup.Fields.FileSize"] = "File Size",
+                ["Nop.Plugin.Widgets.Backup.Fields.Enabled"] = "Enabled",
+                ["Nop.Plugin.Widgets.Backup.Tabs.Save"] = "Save",
             });
 
             await base.InstallAsync();
@@ -181,7 +185,7 @@ namespace Nop.Plugin.Widgets.Backup
             {
                 SystemName = this.PluginDescriptor.SystemName,
                 Title = "Backup",
-                IconClass = "fas fa-story",
+                IconClass = "fas fa-cube",
                 Visible = true,
                 RouteValues = new RouteValueDictionary() { { "area", null } },
             };

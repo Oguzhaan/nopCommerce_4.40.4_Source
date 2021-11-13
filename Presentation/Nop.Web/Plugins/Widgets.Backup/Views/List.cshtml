@@ -11,11 +11,11 @@
               type: "post",
               data: { fileUrl: fileUrl, name: name},
                 url: "@Html.Raw(Url.Action("Download", "Backup"))",
-                success: function (data) {
-                    alert("Success to run task.");
+              success: function (data) {
+                        alert("Success to download file");
                 },
-                error: function (xhr, ajaxoptions, thrownerror) {
-                    alert('failed to run backup.');
+              error: function (xhr, ajaxoptions, thrownerror) {
+                       alert("Failed to download file");
                 }
                 });
     }
@@ -23,20 +23,17 @@
           $.ajax({
                     type: "post",
                     url: "@Html.Raw(Url.Action("DeleteBackupFile", "Backup"))",
-                    success: function (data) {
-                        alert("Success to run task.");
+              success: function (data) {
+                  alert("Success to delete file");
                     },
-                    error: function (xhr, ajaxoptions, thrownerror) {
-                        alert('failed to run backup.');
+              error: function (xhr, ajaxoptions, thrownerror) {
+                  alert("Failed to delete file");
                     }
                 });
     }
 </script>
 <div class="content-header clearfix">
     <h1 class="float-left"> Backup List</h1>
-    <div class="float-right">
-        <button type="button" id="delete-selected" onclick="deleteBackupFile();" class="btn btn-danger" data-toggle="modal" data-target="#delete-selected-action-confirmation" name=""> <i class="far fa-trash-alt"></i> Sil </button>
-    </div>
 </div>
 
 <section class="content">
@@ -53,8 +50,8 @@
                                     <thead>
                                         <tr>
                                             <th><input type="checkbox" name="select_all" value="0" id="example-select-all"></th>
-                                            <th>@Html.Raw(T("Plugins.Widgets.Backup.BackupName"))</th>
-                                            <th>@Html.Raw(T("Plugins.Widgets.Backup.FileSize"))</th>
+                                            <th>@Html.Raw(T("Nop.Plugin.Widgets.Backup.Fields.BackupName"))</th>
+                                            <th>@Html.Raw(T("Nop.Plugin.Widgets.Backup.Fields.FileSize"))</th>
                                             <th>&nbsp;</th>
                                         </tr>
                                     </thead>

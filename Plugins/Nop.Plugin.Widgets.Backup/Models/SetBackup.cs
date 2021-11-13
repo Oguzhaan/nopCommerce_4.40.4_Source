@@ -14,13 +14,11 @@ namespace Nop.Plugin.Widgets.Backup.Models
 {
     public class SetBackup : ISetBackup
     {
-        public  string Set(IHostingEnvironment hostingEnvironment,bool local = false)
+        public  string Set(IHostingEnvironment hostingEnvironment)
         {
             var dbName = DataSettingsManager.LoadSettings().ConnectionString.Split(";")[1].Split("=")[1];
-            dbName = "NopTest";
             string connectionstr = "";
-            if (local) connectionstr = "Data Source=OGUZHAN\\SQLEXPRESS2014;Initial Catalog=NopTest;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=adm123";
-            else connectionstr = DataSettingsManager.LoadSettings().ConnectionString;
+            connectionstr = DataSettingsManager.LoadSettings().ConnectionString;
 
             SqlConnection sqlconn = new SqlConnection(connectionstr);
             SqlCommand sqlcmd = new SqlCommand();

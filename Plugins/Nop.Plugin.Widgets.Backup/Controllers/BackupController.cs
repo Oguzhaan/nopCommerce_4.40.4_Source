@@ -122,21 +122,11 @@ namespace Nop.Plugin.Widgets.Backup.Controllers
             }
             return View("~/Plugins/Widgets.Backup/Views/List.cshtml", fileList);
         }
-        [HttpPost]
-        [IgnoreAntiforgeryToken]
-        public async Task<IActionResult> Download(DownloadModel model)
-        {
-            string mimeType = MimeTypes.GetMimeType(model.name);
-            FileStream fileStream = new FileStream(model.fileUrl, FileMode.Open, FileAccess.Read);
-            return Ok(File(fileStream, mimeType, model.fileUrl));
-        }
-
 
         public PhysicalFileResult DownloadFile(string fileName)
         {
             //Determine the Content Type of the File.
-            string contentType = "";
-            new FileExtensionContentTypeProvider().TryGetContentType(fileName, out contentType);
+            string contentType = "application/sql";
             string pathMain = _hostingEnvironment.WebRootPath.Replace("\\wwwroot", "") + "\\Plugins\\Widgets.Backup\\";
             //Build the File Path.
             string path = Path.Combine(pathMain, "Backup/") + fileName;
@@ -194,7 +184,7 @@ namespace Nop.Plugin.Widgets.Backup.Controllers
         [IgnoreAntiforgeryToken]
         public async Task<string> RunBackup()
         {
-            var result = new SetBackup().Set(_hostingEnvironment, true);
+            var result = new SetBackup().Set(_hostingEnvironment);
             return result;
         }
         public async void ProcessTask()
@@ -210,7 +200,7 @@ namespace Nop.Plugin.Widgets.Backup.Controllers
                         TimeSpan time = await GetTime();
                         try
                         {
-                            new SetBackup().Set(_hostingEnvironment, true);
+                            new SetBackup().Set(_hostingEnvironment);
                         }
                         catch (Exception)
                         {

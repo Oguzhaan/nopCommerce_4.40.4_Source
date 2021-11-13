@@ -9,6 +9,6 @@ namespace Nop.Plugin.Widgets.Backup.Models
 {
     public interface ISetBackup
     {
-        string  Set(IHostingEnvironment hostingEnvironment,bool local = false);
+        string  Set(IHostingEnvironment hostingEnvironment);
     }
 }

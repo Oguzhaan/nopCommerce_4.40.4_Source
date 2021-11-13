@@ -13036,19 +13036,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\oguzh\\.nuget\\packages\\": {}
+    "C:\\Users\\Zafer\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Plugins\\Nop.Plugin.ExchangeRate.EcbExchange\\Nop.Plugin.ExchangeRate.EcbExchange.csproj",
+      "projectUniqueName": "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Plugins\\Nop.Plugin.ExchangeRate.EcbExchange\\Nop.Plugin.ExchangeRate.EcbExchange.csproj",
       "projectName": "Nop.Plugin.ExchangeRate.EcbExchange",
-      "projectPath": "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Plugins\\Nop.Plugin.ExchangeRate.EcbExchange\\Nop.Plugin.ExchangeRate.EcbExchange.csproj",
-      "packagesPath": "C:\\Users\\oguzh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Plugins\\Nop.Plugin.ExchangeRate.EcbExchange\\obj\\",
+      "projectPath": "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Plugins\\Nop.Plugin.ExchangeRate.EcbExchange\\Nop.Plugin.ExchangeRate.EcbExchange.csproj",
+      "packagesPath": "C:\\Users\\Zafer\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Plugins\\Nop.Plugin.ExchangeRate.EcbExchange\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\oguzh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Zafer\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13062,8 +13062,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Libraries\\Nop.Services\\Nop.Services.csproj": {
-              "projectPath": "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Libraries\\Nop.Services\\Nop.Services.csproj"
+            "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Libraries\\Nop.Services\\Nop.Services.csproj": {
+              "projectPath": "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Libraries\\Nop.Services\\Nop.Services.csproj"
             }
           }
         }
@@ -13092,7 +13092,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.209\\RuntimeIdentifierGraph.json"
       }
     }
   }

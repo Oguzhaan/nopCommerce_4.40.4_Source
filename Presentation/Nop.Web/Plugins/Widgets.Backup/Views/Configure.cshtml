@@ -26,10 +26,10 @@
                     type: "post",
                     url: "@Html.Raw(Url.Action("StartProcess", "Backup"))",
                     success: function (data) {
-                        alert("Success to run task.");
+                           alert("Success to run task.");
                     },
                     error: function (xhr, ajaxoptions, thrownerror) {
-                        alert('failed to run backup.');
+                         alert('failed to run backup.');
                     }
                 });
     }
@@ -57,11 +57,11 @@
           $.ajax({
                     type: "post",
                     url: "@Html.Raw(Url.Action("AbortProcess", "Backup"))",
-                    success: function (data) {
-                        alert("Success to stop task.");
+              success: function (data) {
+                  alert('Success to stop task.');
                     },
-                    error: function (xhr, ajaxoptions, thrownerror) {
-                        alert('failed to run backup.');
+              error: function (xhr, ajaxoptions, thrownerror) {
+                  alert('failed to stop task.');
                     }
                 });
     }
@@ -72,10 +72,10 @@
     <h1 class="float-left">Backup Settings</h1>
     <div class="float-right">
         <button class="btn btn-primary" onclick="nowBackup();">
-            <i class="fas fa-plus-square"></i> @T(" Nop.Plugin.Widgets.Backup.Tabs.RunBackupNow")
+            <i class="fas fa-plus-square"></i> @T("Nop.Plugin.Widgets.Backup.Tabs.RunBackupNow")
         </button>
         <button class="btn btn-danger" onclick="stopTask();">
-            <i class="fas fa-plus-square"></i> @T(" Nop.Plugin.Widgets.Backup.Tabs.StopTask")
+            <i class="fas fa-plus-square"></i> @T("Nop.Plugin.Widgets.Backup.Tabs.StopTask")
         </button>
     </div>
 </div>
