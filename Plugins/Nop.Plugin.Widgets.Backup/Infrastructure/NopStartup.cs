@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Nop.Core.Infrastructure;
-using Nop.Plugin.Widgets.Backup.Components;
 using Nop.Plugin.Widgets.Backup.Models;
 using Nop.Services.Customers;
 using System;
@@ -20,12 +19,10 @@ namespace Nop.Plugin.Widgets.Backup.Infrastructure
 
         public void Configure(IApplicationBuilder application)
         {
-          
         }
 
         public void ConfigureServices(IServiceCollection services, IConfiguration configuration)
         {
-            services.AddScoped<ISetBackup, SetBackup>();
 
         }
 

@@ -8,7 +8,7 @@ namespace Nop.Plugin.Widgets.Backup
     /// </summary>
     public class BackupSettings : ISettings
     {
-
+        public string Enabled { get; set; }
         public string DatabaseName { get; set; }
         public string BackupTime { get; set; }
         public BackupType BackupType { get; set; }

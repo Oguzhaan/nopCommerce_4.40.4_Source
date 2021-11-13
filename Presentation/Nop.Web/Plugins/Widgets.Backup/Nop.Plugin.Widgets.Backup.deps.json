@@ -33,6 +33,7 @@
     ".NETCoreApp,Version=v5.0": {
       "Nop.Plugin.Widgets.Backup/1.0.0": {
         "dependencies": {
+          "MimeTypes": "2.2.1",
           "Nop.Web.Framework": "4.4.0",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
@@ -2037,6 +2038,7 @@
           "lib/netstandard2.1/MimeKit.dll": {}
         }
       },
+      "MimeTypes/2.2.1": {},
       "MiniProfiler.AspNetCore/4.1.0": {
         "dependencies": {
           "MiniProfiler.Shared": "4.1.0",
@@ -6421,6 +6423,13 @@
       "sha512": "sha512-rBpIsOdgpMvcNraBDgQSSNCk/MVxxFv7VX2Qq1WnFJ4AnvjIU+r12gaKs6r+SRvCEZWvC5CQlKHuoQbIbO/brA==",
       "path": "mimekit/2.10.1",
       "hashPath": "mimekit.2.10.1.nupkg.sha512"
+    },
+    "MimeTypes/2.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CLgh908k2v+A3iQTmO6iAL4+rHEZXLX4uMeowqapAjTAIRTYcnBVBRqUIcMHWlVAZs5u93ZPzAXnoXzKCU78qg==",
+      "path": "mimetypes/2.2.1",
+      "hashPath": "mimetypes.2.2.1.nupkg.sha512"
     },
     "MiniProfiler.AspNetCore/4.1.0": {
       "type": "package",

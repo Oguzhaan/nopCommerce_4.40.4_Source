@@ -9,7 +9,8 @@ namespace Nop.Plugin.Widgets.Backup.Models
     public record ConfigurationModel : BaseNopModel
     {
         #region Properties
-
+        [NopResourceDisplayName("Nop.Plugin.Widgets.Backup.Fields.Enabled")]
+        public string Enabled { get; set; }
         [NopResourceDisplayName("Nop.Plugin.Widgets.Backup.Fields.DatabaseName")]
         public string DatabaseName { get; set; }
 
@@ -25,6 +26,7 @@ namespace Nop.Plugin.Widgets.Backup.Models
         [NopResourceDisplayName("Nop.Plugin.Widgets.Backup.Fields.DayOfMonth")]
         public string DayOfMonth { get; set; }
 
+        public bool Enabled_OverrideForStore { get; set; }
         public bool BackupTime_OverrideForStore { get; set; }
         public bool DatabaseName_OverrideForStore { get; set; }
         public bool DayOfMonth_OverrideForStore { get; set; }

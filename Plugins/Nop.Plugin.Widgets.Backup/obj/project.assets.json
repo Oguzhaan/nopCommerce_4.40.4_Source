@@ -1870,6 +1870,17 @@
           "lib/netstandard2.1/MimeKit.dll": {}
         }
       },
+      "MimeTypes/2.2.1": {
+        "type": "package",
+        "contentFiles": {
+          "contentFiles/cs/netcoreapp3.0/MimeTypes.cs.pp": {
+            "buildAction": "Compile",
+            "codeLanguage": "cs",
+            "copyToOutput": false,
+            "ppOutputPath": "MimeTypes.cs"
+          }
+        }
+      },
       "MiniProfiler.AspNetCore/4.1.0": {
         "type": "package",
         "dependencies": {
@@ -7014,6 +7025,21 @@
         "lib/netstandard2.1/MimeKit.xml",
         "mimekit.2.10.1.nupkg.sha512",
         "mimekit.nuspec"
+      ]
+    },
+    "MimeTypes/2.2.1": {
+      "sha512": "CLgh908k2v+A3iQTmO6iAL4+rHEZXLX4uMeowqapAjTAIRTYcnBVBRqUIcMHWlVAZs5u93ZPzAXnoXzKCU78qg==",
+      "type": "package",
+      "path": "mimetypes/2.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "contentFiles/cs/any/MimeTypes.NullableAttributes.cs.pp",
+        "contentFiles/cs/netcoreapp3.0/MimeTypes.cs.pp",
+        "contentFiles/cs/netstandard2.1/MimeTypes.cs.pp",
+        "images/nuget-icon.png",
+        "mimetypes.2.2.1.nupkg.sha512",
+        "mimetypes.nuspec"
       ]
     },
     "MiniProfiler.AspNetCore/4.1.0": {
@@ -13379,23 +13405,24 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "MimeTypes >= 2.2.1",
       "Nop.Web.Framework >= 4.4.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Zafer\\.nuget\\packages\\": {}
+    "C:\\Users\\oguzh\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Plugins\\Nop.Plugin.Widgets.Backup\\Nop.Plugin.Widgets.Backup.csproj",
+      "projectUniqueName": "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Plugins\\Nop.Plugin.Widgets.Backup\\Nop.Plugin.Widgets.Backup.csproj",
       "projectName": "Nop.Plugin.Widgets.Backup",
-      "projectPath": "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Plugins\\Nop.Plugin.Widgets.Backup\\Nop.Plugin.Widgets.Backup.csproj",
-      "packagesPath": "C:\\Users\\Zafer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Plugins\\Nop.Plugin.Widgets.Backup\\obj\\",
+      "projectPath": "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Plugins\\Nop.Plugin.Widgets.Backup\\Nop.Plugin.Widgets.Backup.csproj",
+      "packagesPath": "C:\\Users\\oguzh\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Plugins\\Nop.Plugin.Widgets.Backup\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Zafer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\oguzh\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13409,8 +13436,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj": {
-              "projectPath": "C:\\Users\\Zafer\\Documents\\GitHub\\nopCommerce_4.40.4_Source\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj"
+            "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj": {
+              "projectPath": "C:\\Users\\oguzh\\Documents\\Github\\nopCommerce_4.40.4_Source\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj"
             }
           }
         }
@@ -13424,6 +13451,14 @@
     "frameworks": {
       "net5.0": {
         "targetAlias": "net5.0",
+        "dependencies": {
+          "MimeTypes": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[2.2.1, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -13439,7 +13474,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.207\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

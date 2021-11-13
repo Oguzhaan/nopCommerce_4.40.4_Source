@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Hosting;
+using Nop.Core;
 using Nop.Data;
-using Nop.Plugin.Widgets.Backup.Components;
+using Nop.Services.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -13,20 +14,12 @@ namespace Nop.Plugin.Widgets.Backup.Models
 {
     public class SetBackup : ISetBackup
     {
-
-        public SetBackup()
-        {
-            Cron._thread = new Thread(Cron.ProcessTask);
-            Cron._thread.Name = "Backup Plugin";
-            Cron._thread.Start();
-        }
-
-
         public  string Set(IHostingEnvironment hostingEnvironment,bool local = false)
         {
             var dbName = DataSettingsManager.LoadSettings().ConnectionString.Split(";")[1].Split("=")[1];
+            dbName = "NopTest";
             string connectionstr = "";
-            if (local) connectionstr = "Data Source=MSI\\SQLEXPRESS;Initial Catalog=NopDB;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=adm123";
+            if (local) connectionstr = "Data Source=OGUZHAN\\SQLEXPRESS2014;Initial Catalog=NopTest;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=adm123";
             else connectionstr = DataSettingsManager.LoadSettings().ConnectionString;
 
             SqlConnection sqlconn = new SqlConnection(connectionstr);
@@ -49,5 +42,6 @@ namespace Nop.Plugin.Widgets.Backup.Models
                 return ex.Message;
             }
         }
+      
     }
 }
