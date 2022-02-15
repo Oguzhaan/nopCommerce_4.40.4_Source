@@ -7,6 +7,7 @@ Nop Commerce 4.4 için bir çok plugin yazıldı ve yazılan plugin lerin listes
 - File Manager
 - Teqpay Payment
 - İyzico
+- Backup
 
 
 ## İlişkili Projeler
